@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Hero title='Добре дощли' subtitle='Това е вашият Реацт + TS Сайт' />
+        <Hero title='Добре доШли' subtitle='Това е вашият Реацт + TS Сайт' />
       </header>
     </div>
   );
