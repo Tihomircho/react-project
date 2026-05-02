@@ -1,3 +1,5 @@
+import bgImage from "../../assets/header.jpg";
+
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -5,9 +7,21 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle }: HeroProps) => {
   return (
-    <section style={{ padding: '2rem', textAlign: 'center', background: 'red' }}>
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
+    <section
+      style={{
+        padding: "20rem 2rem",
+        textAlign: "center",
+        background: "red",
+        backgroundImage: `url(${bgImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        width: "100%",
+      }}
+    >
+      <div className="container-fluid">
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+      </div>
     </section>
   );
 };

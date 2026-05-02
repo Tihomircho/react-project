@@ -39,3 +39,39 @@
 .active {
   background-color: red;
 }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Картата се повдига леко */
+}
+
+.service-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Снимката няма да се деформира */
+}
+
+.service-content {
+  padding: 200px;
+  background-color: #007bff;
+}
+
+.service-price {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
