@@ -1,10 +1,11 @@
+// eslint-disable-next-line jsx-a11y/anchor-is-valid
 import React from "react";
 
 const Menu: React.FC = () => {
   return (
     <nav className="navbar w-100 navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="http://">
+        <a className="navbar-brand" href="http://#">
           Navbar
         </a>
         <button
@@ -21,22 +22,30 @@ const Menu: React.FC = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="http://">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="http://#"
+              >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="http://">
+              <a className="nav-link" href="http://#">
                 Features ksdjfghs
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="http://">
+              <a className="nav-link" href="http://#">
                 Pricing
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
+              <a
+                className="nav-link disabled"
+                aria-disabled="true"
+                href="http://#"
+              >
                 Disabled
               </a>
             </li>
