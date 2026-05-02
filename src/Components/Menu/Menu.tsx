@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
-                Features
+                Features ksdjfghs
               </a>
             </li>
             <li className="nav-item">
