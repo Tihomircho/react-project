@@ -32,7 +32,7 @@ const Menu: React.FC = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="http://#">
-                Features ksdjfghs
+                Features
               </a>
             </li>
             <li className="nav-item">

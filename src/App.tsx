@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Menu />
-        <img src={logo} className="App-logo" alt="logo" />
+
         <Hero title="Добре доШли" subtitle="Това е вашият Реацт + TS Сайт" />
         <Services />
       </header>
