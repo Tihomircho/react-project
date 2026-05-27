@@ -6,6 +6,7 @@ import Services from "./Components/Services/Services";
 import Menu from "./Components/Menu/Menu";
 import bgImage from "../src/assets/header.jpg";
 import Form from "./Form/Form";
+import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -17,7 +18,9 @@ function App() {
           bgImage={bgImage}
         />
         {/* <Form /> */}
+
         <Services />
+        <Footer />
       </header>
     </div>
   );

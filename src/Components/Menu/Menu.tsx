@@ -1,12 +1,12 @@
 // eslint-disable-next-line jsx-a11y/anchor-is-valid
 import React from "react";
-
+import logo from "../../assets/logo.png";
 const Menu: React.FC = () => {
   return (
     <nav className="navbar w-100 navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="http://#">
-          Navbar
+          <img src={logo} alt="logo" style={{ maxWidth: 100 }} />
         </a>
         <button
           className="navbar-toggler"
