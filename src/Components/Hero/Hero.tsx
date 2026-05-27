@@ -1,11 +1,10 @@
-import bgImage from "../../assets/header.jpg";
-
 interface HeroProps {
   title: string;
   subtitle: string;
+  bgImage: string;
 }
 
-const Hero = ({ title, subtitle }: HeroProps) => {
+const Hero = ({ title, subtitle, bgImage }: HeroProps) => {
   return (
     <section
       style={{
