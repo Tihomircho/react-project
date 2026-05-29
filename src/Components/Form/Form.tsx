@@ -2,7 +2,13 @@ import React, { useRef } from "react";
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import style from "./Form.module.scss";
 import imageRight from "../../../src/assets/hand-drawn-flat-design-handyman.png";
-const ContactForm: React.FC = () => {
+import { RefObject } from "react";
+
+interface FormSection {
+  formRef: RefObject<HTMLDivElement | null>;
+}
+
+const ContactForm: React.FC<FormSection> = ({ formRef }) => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
@@ -30,7 +36,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className={`container py-4 ${style.formWrapper}`}>
+    <div className={`container py-4 ${style.formWrapper}`} ref={formRef}>
       <div className="row align-items-center">
         <div className="col-12 col-md-6">
           <form

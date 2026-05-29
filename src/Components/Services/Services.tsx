@@ -3,7 +3,7 @@ import "../../App.css";
 import furniture1 from "./../../assets/furniture1.jpg";
 import electricity1 from "./../../assets/electricity1.jpg";
 import plumbing from "./../../assets/plumbing-repair-service.jpg";
-// 1. Дефинираме тип за нашите услуги
+
 interface Service {
   id: number;
   title: string;
@@ -11,7 +11,9 @@ interface Service {
   desc: string;
   price: string;
 }
-
+interface ServicesProps {
+  onScrollToForm: () => void;
+}
 const services: Service[] = [
   {
     id: 1,
@@ -36,7 +38,7 @@ const services: Service[] = [
   },
 ];
 
-const Services: React.FC = () => {
+const Services: React.FC<ServicesProps> = ({ onScrollToForm }) => {
   return (
     <section style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}>
       <h2
@@ -80,6 +82,7 @@ const Services: React.FC = () => {
                   borderRadius: "5px",
                   cursor: "pointer",
                 }}
+                onClick={onScrollToForm}
               >
                 Заяви ремонт
               </button>
