@@ -1,0 +1,71 @@
+import React, { useRef } from "react";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import style from "./Form.module.scss";
+import imageRight from "../../../src/assets/hand-drawn-flat-design-handyman.png";
+const ContactForm: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "YOUR_SERVICE_ID",
+          "YOUR_TEMPLATE_ID",
+          form.current,
+          "YOUR_PUBLIC_KEY",
+        )
+        .then(
+          (result: EmailJSResponseStatus) => {
+            console.log("Статус от сървъра:", result.status);
+            alert("Съобщението е изпратено успешно!");
+            (e.target as HTMLFormElement).reset();
+          },
+          (error: { text: string }) => {
+            alert("Грешка при изпращането: " + error.text);
+          },
+        );
+    }
+  };
+
+  return (
+    <div className={`container py-4 ${style.formWrapper}`}>
+      <div className="row align-items-center">
+        <div className="col-12 col-md-6">
+          <form
+            className={style.form}
+            ref={form}
+            onSubmit={sendEmail}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              maxWidth: "400px",
+            }}
+          >
+            <label>Име</label>
+            <input type="text" name="user_name" required />
+
+            <label>Имейл</label>
+            <input type="email" name="user_email" required />
+
+            <label>Описание на ремонта</label>
+            <textarea name="message" required />
+
+            <button type="submit">Изпрати запитване</button>
+          </form>
+        </div>
+        <div className="col-12 col-md-6">
+          <img
+            src={imageRight}
+            alt="Image right"
+            className={style.imageRight}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContactForm;

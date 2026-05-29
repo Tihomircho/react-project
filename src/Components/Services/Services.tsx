@@ -63,7 +63,7 @@ const Services: React.FC = () => {
                 style={{
                   color: "#666",
                   padding: "0px 10px 10px 10px",
-                  fontSize: "0.9rem",
+                  fontSize: "1rem",
                 }}
               >
                 {service.desc}

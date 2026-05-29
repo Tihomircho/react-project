@@ -10,7 +10,6 @@ const Hero = ({ title, subtitle, bgImage }: HeroProps) => {
       style={{
         padding: "20rem 2rem",
         textAlign: "center",
-        background: "red",
         backgroundImage: `url(${bgImage})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

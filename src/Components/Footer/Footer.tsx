@@ -70,15 +70,18 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
         <hr className="border-secondary my-4" />
 
         <div className="d-flex flex-column flex-sm-row justify-content-around align-items-center small ">
-          <div style={{ maxWidth: 400 }}>
+          <div style={{ maxWidth: 400, width: "100%" }}>
             <p className="mb-2 mb-sm-0">
               &copy; {currentYear} {companyName}. Всички права запазени.
             </p>
           </div>
-          <div style={{ maxWidth: 400 }}>
+          <div style={{ maxWidth: 400, width: "100%" }}>
             <img src={logo} alt="Footer logo" style={{ maxWidth: 100 }} />
           </div>
-          <div className="d-flex gap-3" style={{ maxWidth: 400 }}>
+          <div
+            className="d-flex gap-3"
+            style={{ maxWidth: 400, width: "100%" }}
+          >
             <a href="#privacy" className=" text-decoration-none">
               Поверителност
             </a>

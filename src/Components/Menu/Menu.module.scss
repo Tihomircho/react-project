@@ -1,0 +1,29 @@
+.menu {
+    ul {
+
+        li {
+            margin: 5px 0px;
+
+            @media all and (min-width:992px) {
+                margin: 0 5px;
+            }
+
+            a {
+                border: 1px solid;
+
+                @media all and (min-width:992px) {
+                    width: 150px;
+                    max-width: 100%;
+                    margin: 5px 20px;
+                }
+            }
+
+            [class*="active"] {
+                font-weight: 700;
+            }
+
+        }
+    }
+
+
+}

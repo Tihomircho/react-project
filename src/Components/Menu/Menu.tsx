@@ -1,53 +1,63 @@
 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-import React from "react";
+import React, { act, useState } from "react";
 import logo from "../../assets/logo.png";
+import style from "./Menu.module.scss";
+import { NavLink } from "react-router-dom";
 const Menu: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeItem, setActiveItem] = useState<string>("home");
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
   return (
-    <nav className="navbar w-100 navbar-expand-lg bg-body-tertiary">
+    <nav
+      className={`${style.menu} navbar w-100 navbar-expand-lg bg-body-tertiary`}
+    >
       <div className="container-fluid">
-        <a className="navbar-brand" href="http://#">
+        <NavLink className="navbar-brand" to="/" onClick={closeMenu}>
           <img src={logo} alt="logo" style={{ maxWidth: 100 }} />
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
+          onClick={toggleMenu}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
-                className="nav-link active"
+              <NavLink
+                className="nav-link"
                 aria-current="page"
-                href="http://#"
+                onClick={closeMenu}
+                to="/"
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="http://#">
+              <NavLink className="nav-link" onClick={closeMenu} to="/features">
                 Features
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="http://#">
+              <NavLink className="nav-link" onClick={closeMenu} to="/pricing">
                 Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link disabled"
-                aria-disabled="true"
-                href="http://#"
-              >
-                Disabled
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
