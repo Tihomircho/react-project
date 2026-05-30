@@ -44,8 +44,6 @@ const Menu: React.FC = () => {
         <div
           className={`navbar-toggler ${style.menuBtn} ${isOpen ? style.open : ""}`}
           onClick={toggleMenu}
-
-          // aria-expanded={isOpen}
         >
           <span></span>
           <span></span>
