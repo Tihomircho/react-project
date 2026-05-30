@@ -1,3 +1,5 @@
+import style from "./Hero.module.scss";
+
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -7,16 +9,12 @@ interface HeroProps {
 const Hero = ({ title, subtitle, bgImage }: HeroProps) => {
   return (
     <section
+      className={style.heroWrapper}
       style={{
-        padding: "20rem 2rem",
-        textAlign: "center",
         backgroundImage: `url(${bgImage})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        width: "100%",
       }}
     >
-      <div className="container-fluid">
+      <div className={`${style.content} container-fluid`}>
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>

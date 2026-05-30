@@ -1,12 +1,12 @@
 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-import React, { act, useState } from "react";
+import React, { act, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import style from "./Menu.module.scss";
 import { NavLink } from "react-router-dom";
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [activeItem, setActiveItem] = useState<string>("home");
-
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [lastScrollY, setLastScroll] = useState<number>(0);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -14,26 +14,43 @@ const Menu: React.FC = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currnetScrollY = window.scrollY;
+
+      if (currnetScrollY > lastScrollY && currnetScrollY > 80) {
+        setIsVisible(false);
+        setIsOpen(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScroll(currnetScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+  const scrollClass = isVisible ? style.visible : style.hidden;
   return (
     <nav
-      className={`${style.menu} navbar w-100 navbar-expand-lg bg-body-tertiary`}
+      className={`${style.menu} ${scrollClass} navbar w-100 navbar-expand-lg`}
     >
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/" onClick={closeMenu}>
           <img src={logo} alt="logo" style={{ maxWidth: 100 }} />
         </NavLink>
-        <button
-          className="navbar-toggler"
+        <div
+          className={`navbar-toggler ${style.menuBtn} ${isOpen ? style.open : ""}`}
           onClick={toggleMenu}
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded={isOpen}
-          aria-label="Toggle navigation"
+
+          // aria-expanded={isOpen}
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div
           className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
           id="navbarNav"

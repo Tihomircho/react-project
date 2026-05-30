@@ -12,14 +12,14 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Menu />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/features" element={<Features />} />
-            <Route />
-          </Routes>
-
-          <Footer />
         </header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route />
+        </Routes>
+
+        <Footer />
       </div>
     </Router>
   );
