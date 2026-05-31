@@ -35,7 +35,7 @@ const Menu: React.FC = () => {
   const scrollClass = isVisible ? style.visible : style.hidden;
   return (
     <nav
-      className={`${style.menu} ${scrollClass} navbar w-100 navbar-expand-lg`}
+      className={`${style.menu} ${scrollClass} py-0 navbar w-100 navbar-expand-lg`}
     >
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/" onClick={closeMenu}>

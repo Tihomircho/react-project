@@ -11,6 +11,8 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
 
   return (
     <footer className={`bg-dark text-light py-5 mt-auto w-100 ${style.footer}`}>
+      <hr className="border-secondary my-4 pb-4" />
+
       <div className="container-fluid">
         <div className="row g-4">
           <div className="col-12 col-md-4">
