@@ -66,7 +66,7 @@ const Menu: React.FC = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" onClick={closeMenu} to="/features">
-                Features
+                Галерия
               </NavLink>
             </li>
             <li className="nav-item">

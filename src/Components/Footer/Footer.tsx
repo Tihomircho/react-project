@@ -18,8 +18,8 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
           <div className="col-12 col-md-4">
             <h5 className="text-uppercase mb-3 fw-bold">{companyName}</h5>
             <p className=" small white">
-              Ние създаваме модерни уеб решения и помагаме на бизнеса да расте в
-              дигиталния свят.
+              Твоят доверен домашен майстор в София. Бързи, чисти и качествени
+              дребни ремонти, монтажи и техническа поддръжка за твоя дом и офис.
             </p>
           </div>
 

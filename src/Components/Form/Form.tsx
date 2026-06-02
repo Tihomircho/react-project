@@ -17,10 +17,10 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
     if (form.current) {
       emailjs
         .sendForm(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
+          "service_e5jm77k",
+          "template_n4hgxmp",
           form.current,
-          "YOUR_PUBLIC_KEY",
+          "_4tTnZoJe-Ig8Nz99",
         )
         .then(
           (result: EmailJSResponseStatus) => {
@@ -48,7 +48,7 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "10px",
-                maxWidth: "400px",
+                maxWidth: "500px",
               }}
             >
               <label>Име</label>
