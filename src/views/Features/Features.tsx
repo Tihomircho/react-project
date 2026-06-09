@@ -1,5 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import style from "./Features.module.scss";
+import Image from "next/image";
 import dushkabina1 from "../../assets/dush_kabina1.jpg";
 import dushkabina2 from "../../assets/dush_kabina2.1.jpg";
 import dushkabina3 from "../../assets/dush_kabina2.jpg";
@@ -10,12 +12,13 @@ import shkafBania from "../../assets/shkaf_banq1.jpg";
 import shkafBania2 from "../../assets/shkaf_banq2.jpg";
 import shkafBania3 from "../../assets/shkaf_banq3.jpg";
 import shkafBania4 from "../../assets/shkaf_banq4.jpg";
+import { StaticImageData } from "next/image";
 // Интерфейс за структурата на всяка снимка
 interface GalleryProject {
   id: number;
   title: string;
   category: string;
-  images: string[];
+  images: (string | StaticImageData)[];
 }
 
 const Gallery: React.FC = () => {
@@ -136,21 +139,27 @@ const Gallery: React.FC = () => {
                 className="position-relative overflow-hidden"
                 style={{ height: "250px" }}
               >
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="w-100 h-100"
-                  style={{
-                    objectFit: "cover",
-                    transition: "transform 0.3s ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.05)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
-                />
+                {project.images && project.images[0] ? (
+                  <Image
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="w-100 h-100"
+                    style={{
+                      objectFit: "cover",
+                      transition: "transform 0.3s ease",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.05)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
+                  />
+                ) : (
+                  <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
+                    <span className="text-muted small">Няма снимка</span>
+                  </div>
+                )}
                 {/* Индикатор за броя снимки в албума */}
                 <span className="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 small m-2 rounded opacity-75">
                   📸 {project.images.length} снимки
@@ -187,12 +196,19 @@ const Gallery: React.FC = () => {
 
               {/* Основна снимка от слайдъра */}
               <div className="position-relative d-inline-block mx-auto">
-                <img
-                  src={activeProject.images[currentImageIndex]}
-                  alt={`Снимка ${currentImageIndex + 1}`}
-                  className="img-fluid rounded shadow"
-                  style={{ maxHeight: "70vh" }}
-                />
+                {activeProject.images &&
+                activeProject.images[currentImageIndex] ? (
+                  <Image
+                    src={activeProject.images[currentImageIndex]}
+                    alt={`Снимка ${currentImageIndex + 1}`}
+                    className="img-fluid rounded shadow"
+                    style={{ maxHeight: "85vh", width: "auto" }}
+                  />
+                ) : (
+                  <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
+                    <span className="text-muted small">Няма снимка</span>
+                  </div>
+                )}
 
                 {/* Показваме стрелки за навигация само ако има повече от 1 снимка */}
                 {activeProject.images.length > 1 && (

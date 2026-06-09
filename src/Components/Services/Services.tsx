@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import "../../App.css";
 import furniture1 from "./../../assets/furniture1.jpg";
 import electricity1 from "./../../assets/electricity1.jpg";
 import plumbing from "./../../assets/plumbing-repair-service.jpg";
@@ -18,21 +18,21 @@ const services: Service[] = [
   {
     id: 1,
     title: "Монтаж и демонтаж на мебели",
-    image: furniture1,
+    image: furniture1.src,
     desc: "Професионално <strong>сглобяване</strong> и <strong>разглобяване</strong> на всякакъв вид <strong>мебели</strong> – <strong>гардероби</strong>, <strong>спални</strong> и <strong>секции</strong>. Бързо, прецизно и с внимание към детайла, като гарантирам пълна здравина и перфектно нивелиране на вашите нови или стари мебели.",
     price: "от 30 €.",
   },
   {
     id: 2,
     title: "Електро Услуги",
-    image: electricity1,
+    image: electricity1.src,
     desc: "Професионален <strong>монтаж</strong> и <strong>подмяна</strong> на <strong>осветителни тела</strong>, <strong>ключове</strong> и <strong>контакти</strong> за вашия дом или офис. Осигурявам <strong>безопасно свързване</strong>, <strong>прецизна работа</strong> и <strong>надеждност</strong> на електроинсталацията, за да гарантирам вашия комфорт и спокойствие.",
     price: "от 30 €.",
   },
   {
     id: 3,
     title: "ВиК Услуги",
-    image: plumbing,
+    image: plumbing.src,
     desc: "Професионален и чист <strong>монтаж</strong> на <strong>смесители (батерии)</strong> за <strong>мивки</strong>, <strong>спирателни кранчета</strong> и <strong>мебели за баня</strong>. Гарантирам <strong>сигурност срещу течове</strong>, коректност и качествено изпълнение на <strong>всяка сглобка</strong>, за да си <strong>спестите</strong> време и бъдещи ремонти.",
     price: "от 30 €.",
   },

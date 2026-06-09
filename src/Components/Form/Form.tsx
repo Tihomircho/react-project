@@ -1,11 +1,13 @@
+"use client";
 import React, { useRef } from "react";
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import style from "./Form.module.scss";
-import imageRight from "../../../src/assets/hand-drawn-flat-design-handyman2.png";
+import imageRight from "../../assets/hand-drawn-flat-design-handyman2.png";
 import { RefObject } from "react";
+import Image from "next/image";
 
 interface FormSection {
-  formRef: RefObject<HTMLDivElement | null>;
+  formRef?: RefObject<HTMLDivElement | null>;
 }
 
 const ContactForm: React.FC<FormSection> = ({ formRef }) => {
@@ -64,7 +66,7 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
             </form>
           </div>
           <div className="col-12 col-md-6">
-            <img
+            <Image
               src={imageRight}
               alt="Image right"
               className={style.imageRight}

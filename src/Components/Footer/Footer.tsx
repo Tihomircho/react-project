@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import style from "./Footer.module.scss";
 import logo from "../../assets/logo.png";
-
+import Image from "next/image";
 interface FooterProps {
   companyName?: string;
 }
@@ -78,7 +79,11 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             </p>
           </div>
           <div style={{ maxWidth: 400, width: "100%" }}>
-            <img src={logo} alt="Footer logo" style={{ maxWidth: 100 }} />
+            <Image
+              src={logo}
+              alt="Footer logo"
+              style={{ maxWidth: 100, height: "auto" }}
+            />
           </div>
           <div
             className="d-flex gap-3"

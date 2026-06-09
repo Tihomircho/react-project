@@ -1,3 +1,4 @@
+"use client";
 import style from "./Hero.module.scss";
 
 interface HeroProps {

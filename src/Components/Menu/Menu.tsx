@@ -1,8 +1,11 @@
 // eslint-disable-next-line jsx-a11y/anchor-is-valid
+"use client";
 import React, { act, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import style from "./Menu.module.scss";
-import { NavLink } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -38,9 +41,13 @@ const Menu: React.FC = () => {
       className={`${style.menu} ${scrollClass} py-0 navbar w-100 navbar-expand-lg`}
     >
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/" onClick={closeMenu}>
-          <img src={logo} alt="logo" style={{ maxWidth: 100 }} />
-        </NavLink>
+        <Link className="navbar-brand" href="/" onClick={closeMenu}>
+          <Image
+            src={logo}
+            alt="logo"
+            style={{ maxWidth: 100, height: "auto" }}
+          />
+        </Link>
         <div
           className={`navbar-toggler ${style.menuBtn} ${isOpen ? style.open : ""}`}
           onClick={toggleMenu}
@@ -55,24 +62,24 @@ const Menu: React.FC = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink
+              <Link
                 className="nav-link"
                 aria-current="page"
                 onClick={closeMenu}
-                to="/"
+                href="/"
               >
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" onClick={closeMenu} to="/features">
+              <Link className="nav-link" onClick={closeMenu} href="/features">
                 Галерия
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" onClick={closeMenu} to="/pricing">
-                Pricing
-              </NavLink>
+              <Link className="nav-link" onClick={closeMenu} href="/pricing">
+                Цени
+              </Link>
             </li>
           </ul>
         </div>
