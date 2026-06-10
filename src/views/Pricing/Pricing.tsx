@@ -129,9 +129,9 @@ const Pricing: React.FC = () => {
       <div className="container" style={{ maxWidth: "900px" }}>
         {/* ЗАГЛАВИЕ */}
         <div className="text-center mb-5">
-          <h2 className="text-primary fw-bolder display-6">
+          <h1 className="text-primary fw-bolder display-6">
             Цени за Вътрешни Ремонти
-          </h2>
+          </h1>
           <p className="text-muted">
             Ориентировъчни цени за труд. Крайна цена се формира след оглед.
           </p>

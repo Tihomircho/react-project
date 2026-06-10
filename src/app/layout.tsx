@@ -10,7 +10,6 @@ export default function RootLayout({
   return (
     <html lang="bg">
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           rel="stylesheet"

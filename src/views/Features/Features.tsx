@@ -105,7 +105,7 @@ const Gallery: React.FC = () => {
   return (
     <div className={`container ${style.featuresWrapper}`}>
       <div className="text-center mb-5">
-        <h2 className="fw-bold text-uppercase">Нашата Галерия</h2>
+        <h1 className="fw-bold text-uppercase">Нашата Галерия</h1>
         <p className="text-muted">
           Разгледайте завършените проекти на Mr. Fixer Service в София
         </p>

@@ -2,9 +2,12 @@ import { Metadata } from "next";
 import Features from "../../views/Features/Features";
 
 export const metadata: Metadata = {
-  title: "Ремонтни Услуги и Описание | Домашен Майстор",
+  title: "Галерия и Завършени Проекти | Домашен Майстор София",
   description:
-    "Вижте какви услуги предлагаме - от монтаж на мебели до електро услуги.",
+    "Разгледайте снимки от нашите завършени ремонти в София. Качествено изпълнение на ВиК, електро монтажи и сглобяване на мебели. Вижте работата ни!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function FeaturesPage() {

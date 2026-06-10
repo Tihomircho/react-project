@@ -4,7 +4,10 @@ import Pricing from "../../views/Pricing/Pricing";
 export const metadata: Metadata = {
   title: "Цени за Ремонти в София | Домашен Майстор",
   description:
-    "Прозрачни цени за домашни ремонти, ВиК услуги и монтажи. Поискайте оферта.",
+    "Вижте актуалните цени за ВиК, електро услуги, боядисване и монтаж на мебели в София. Прозрачни цени без скрити такси. Поискайте оферта сега!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function PricingPage() {
