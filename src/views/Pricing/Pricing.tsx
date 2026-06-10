@@ -25,28 +25,28 @@ const pricingData: PricingCategory[] = [
     items: [
       {
         name: "Грундиране на стени и тавани",
-        price: "2.50",
-        unit: "лв./кв.м.",
+        price: "1.25",
+        unit: "€/кв.м.",
       },
       {
         name: "Боядисване с латекс (два ръце) - бяло",
-        price: "6.00",
-        unit: "лв./кв.м.",
+        price: "2.50",
+        unit: "€/кв.м.",
       },
       {
         name: "Боядисване с латекс - цветно",
-        price: "7.50",
-        unit: "лв./кв.м.",
+        price: "4.00",
+        unit: "€/кв.м.",
       },
       {
-        name: "Шпакловка с шийтрок (финишно)",
-        price: "12.00",
-        unit: "лв./кв.м.",
+        name: "Шпакловка с шийтрок (финишно, шлайф)",
+        price: "7.00",
+        unit: "€/кв.м.",
       },
       {
         name: "Обръщане на прозорци и врати след PVC дограма",
-        price: "18.00",
-        unit: "лв./л.м.",
+        price: "13.00",
+        unit: "€/л.м.",
       },
     ],
   },
@@ -55,23 +55,23 @@ const pricingData: PricingCategory[] = [
     title: "Електро Услуги",
     icon: "⚡",
     items: [
-      { name: "Монтаж на ключ или контакт", price: "8.00", unit: "лв./бр." },
+      { name: "Монтаж на ключ или контакт", price: "4.00", unit: "€/бр." },
       {
         name: "Монтаж на стандартно осветително тяло / аплик",
-        price: "25.00",
-        unit: "лв./бр.",
+        price: "8.00",
+        unit: "€/бр.",
       },
       {
         name: "Монтаж на LED лунички (в готов отвор)",
-        price: "10.00",
-        unit: "лв./бр.",
+        price: "5.00",
+        unit: "€/бр.",
       },
       {
         name: "Подмяна на автоматичен предпазител",
-        price: "20.00",
-        unit: "лв./бр.",
+        price: "10.00",
+        unit: "€/бр.",
       },
-      { name: "Монтаж на вентилатор за баня", price: "35.00", unit: "лв./бр." },
+      { name: "Монтаж на вентилатор за баня", price: "15.00", unit: "€/бр." },
     ],
   },
   {
@@ -81,16 +81,16 @@ const pricingData: PricingCategory[] = [
     items: [
       {
         name: "Монтаж на смесител / батерия (мивка/баня)",
-        price: "40.00",
-        unit: "лв./бр.",
+        price: "20.00",
+        unit: "€/бр.",
       },
-      { name: "Монтаж на сифон за мивка", price: "25.00", unit: "лв./бр." },
+      { name: "Монтаж на сифон за мивка", price: "15.00", unit: "€/бр." },
       {
         name: "Монтаж на тоалетна чиния (стандартна)",
-        price: "90.00",
-        unit: "лв./бр.",
+        price: "45.00",
+        unit: "€/бр.",
       },
-      { name: "Подмяна на спирателен кран", price: "20.00", unit: "лв./бр." },
+      { name: "Подмяна на спирателен кран", price: "20.00", unit: "€/бр." },
     ],
   },
   {
@@ -101,20 +101,20 @@ const pricingData: PricingCategory[] = [
       {
         name: "Монтаж на стойка за телевизор (на стена)",
         price: "45.00",
-        unit: "лв./бр.",
+        unit: "€/бр.",
       },
-      { name: "Сглобяване на скрин / комод", price: "60.00", unit: "лв./бр." },
+      { name: "Сглобяване на скрин / комод", price: "60.00", unit: "€/бр." },
       {
         name: "Сглобяване на гардероб с плъзгащи врати",
         price: "120.00",
-        unit: "лв./бр.",
+        unit: "€/бр.",
       },
       {
         name: "Монтаж на кухненски горен шкаф",
         price: "30.00",
-        unit: "лв./бр.",
+        unit: "€/бр.",
       },
-      { name: "Монтаж на корнизи за пердета", price: "20.00", unit: "лв./бр." },
+      { name: "Монтаж на корнизи за пердета", price: "20.00", unit: "€/бр." },
     ],
   },
 ];
@@ -180,7 +180,7 @@ const Pricing: React.FC = () => {
         {/* ДОЛЕН БЛОК С БУТОН ЗА ДЕЙСТВИЕ */}
         <div className="text-center mt-5">
           <p className="small text-muted fst-italic mb-3">
-            * Минимална стойност на поръчка за посещение на адрес: 50.00 лв.
+            * Минимална стойност на поръчка за посещение на адрес: 20.00 €
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -195,11 +195,7 @@ const Pricing: React.FC = () => {
           className={style.cButtonWRapper}
           onClick={() => setIsModalOpen(false)}
         >
-          <Image
-            className={style.cButton}
-            src={closeIcon.src}
-            alt="Close Icon"
-          />
+          <Image className={style.cButton} src={closeIcon} alt="Close Icon" />
 
           <Form />
         </div>

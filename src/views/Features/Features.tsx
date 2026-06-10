@@ -12,6 +12,16 @@ import shkafBania from "../../assets/shkaf_banq1.jpg";
 import shkafBania2 from "../../assets/shkaf_banq2.jpg";
 import shkafBania3 from "../../assets/shkaf_banq3.jpg";
 import shkafBania4 from "../../assets/shkaf_banq4.jpg";
+import osvTelo1 from "../../assets/osvetitelni_tela.jpg";
+import osvTelo2 from "../../assets/osvetitelni_tela2.jpg";
+import osvTelo3 from "../../assets/osvetitelni_tela3.jpg";
+import gpkBoq1 from "../../assets/gpk_boq1.jpg";
+import gpkBoq2 from "../../assets/gpk_boq2.jpg";
+import gpkBoq3 from "../../assets/gpk_boq3.jpg";
+import gpkBoq4 from "../../assets/gpk_boq4.jpg";
+import gpkBoq5 from "../../assets/gpk_boq5.jpg";
+import gpkBoq6 from "../../assets/gpk_boq6.jpg";
+import premestvaneNaKontakt from "../../assets/premestvane_na kontakti.jpg";
 import { StaticImageData } from "next/image";
 // Интерфейс за структурата на всяка снимка
 interface GalleryProject {
@@ -32,9 +42,9 @@ const Gallery: React.FC = () => {
     },
     {
       id: 2,
-      title: "Смяна на ел. табло",
+      title: "Ел. Услуги",
       category: "Електро",
-      images: [],
+      images: [premestvaneNaKontakt],
     },
     {
       id: 3,
@@ -52,13 +62,13 @@ const Gallery: React.FC = () => {
       id: 5,
       title: "Монтаж на LED осветление",
       category: "Електро",
-      images: [],
+      images: [osvTelo1, osvTelo2, osvTelo3],
     },
     {
       id: 6,
-      title: "Поправка на интериорна врата",
-      category: "Дребни ремонти",
-      images: [],
+      title: "Шпакловка, боя, гипсокартон",
+      category: "Вътрешни ремонти",
+      images: [gpkBoq1, gpkBoq2, gpkBoq3, gpkBoq4, gpkBoq5, gpkBoq6],
     },
   ];
 
@@ -74,7 +84,7 @@ const Gallery: React.FC = () => {
       ? galleryData
       : galleryData.filter((item) => item.category === filter);
 
-  const categories = ["Всички", "ВиК", "Електро", "Мебели", "Дребни ремонти"];
+  const categories = ["Всички", "ВиК", "Електро", "Мебели", "Вътрешни ремонти"];
 
   // Функция за отваряне на албума
   const openLightbox = (project: GalleryProject) => {
