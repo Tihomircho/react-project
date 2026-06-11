@@ -119,6 +119,16 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
 
       alert("Съобщението и снимките са изпратени успешно!");
 
+      const cookieConsent = localStorage.getItem("cookie-consent");
+      if (
+        cookieConsent === "accepted" &&
+        typeof window !== "undefined" &&
+        (window as any).fbq
+      ) {
+        (window as any).fbq("track", "Lead");
+        console.log("Facebook Pixel: Успешно отчетено запитване (Lead)!");
+      }
+
       // Почистваме състоянията при успех
       imagesList.forEach((item) => URL.revokeObjectURL(item.previewUrl));
       setImagesList([]);

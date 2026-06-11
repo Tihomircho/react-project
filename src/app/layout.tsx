@@ -2,7 +2,7 @@ import "./App.css";
 import Footer from "../Components/Footer/Footer";
 import Menu from "../Components/Menu/Menu";
 import CookieConsent from "../Components/CookieConsent/CookieConsent";
-
+import Script from "next/script";
 export default function RootLayout({
   children,
 }: {
@@ -17,6 +17,20 @@ export default function RootLayout({
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
           crossOrigin="anonymous"
         />
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://facebook.net');
+            fbq('init', '2295146530752579');
+            fbq('track', 'PageView');
+          `}
+        </Script>
       </head>
       <body>
         <div className="App">
