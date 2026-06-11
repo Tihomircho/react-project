@@ -56,15 +56,14 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
           <div className="col-6 col-md-4">
             <h5 className="text-uppercase mb-3 fw-bold">Контакти</h5>
             <ul className="list-unstyled  small">
+              <li className="mb-2">гр. София, Люлин 2</li>
               <li className="mb-2">
-                <i className="bi bi-geo-alt-fill me-2"></i> гр. София, ул.
-                Примерна 10
+                <a href="mailto:tihomirptodorov984@gmail.com">
+                  tihomirptodorov984@gmail.com
+                </a>
               </li>
               <li className="mb-2">
-                <i className="bi bi-envelope-fill me-2"></i> info@example.com
-              </li>
-              <li className="mb-2">
-                <i className="bi bi-telephone-fill me-2"></i> +359 888 123 456
+                <a href="tel:+359 894 376 062">+359 894 376 062</a>
               </li>
             </ul>
           </div>

@@ -68,7 +68,7 @@ const Menu: React.FC = () => {
                 onClick={closeMenu}
                 href="/"
               >
-                Home
+                Начало
               </Link>
             </li>
             <li className="nav-item">
