@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import style from "./Features.module.scss";
+import style from "./Gallery.module.scss";
 import Image from "next/image";
 import dushkabina1 from "../../assets/dush_kabina1.jpg";
 import dushkabina2 from "../../assets/dush_kabina2.1.jpg";

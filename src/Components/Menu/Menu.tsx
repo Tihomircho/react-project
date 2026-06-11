@@ -72,12 +72,12 @@ const Menu: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" onClick={closeMenu} href="/features">
+              <Link className="nav-link" onClick={closeMenu} href="/gallery">
                 Галерия
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" onClick={closeMenu} href="/pricing">
+              <Link className="nav-link" onClick={closeMenu} href="/ceni">
                 Цени
               </Link>
             </li>

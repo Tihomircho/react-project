@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Pricing from "../../views/Pricing/Pricing";
+import Ceni from "../../views/Ceni/Ceni";
 
 export const metadata: Metadata = {
   title: "Цени за Ремонти в София | Домашен Майстор",
@@ -10,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PricingPage() {
-  return <Pricing />;
+export default function CeniPage() {
+  return <Ceni />;
 }

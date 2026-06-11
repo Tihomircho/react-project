@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Features from "../../views/Features/Features";
+import Gallery from "../../views/Gallery/Gallery";
 
 export const metadata: Metadata = {
   title: "Галерия и Завършени Проекти | Домашен Майстор София",
@@ -10,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FeaturesPage() {
-  return <Features />;
+export default function GallerysPage() {
+  return <Gallery />;
 }

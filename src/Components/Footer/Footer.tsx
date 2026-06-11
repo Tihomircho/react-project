@@ -28,26 +28,18 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             <h5 className="text-uppercase mb-3 fw-bold">Връзки</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#home" className=" text-decoration-none hover-link">
+                <a href="/" className=" text-decoration-none hover-link">
                   Начало
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#services"
-                  className=" text-decoration-none hover-link"
-                >
+                <a href="/gallery" className=" text-decoration-none hover-link">
                   Услуги
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#about" className=" text-decoration-none hover-link">
                   За нас
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#contact" className=" text-decoration-none hover-link">
-                  Контакти
                 </a>
               </li>
             </ul>
@@ -78,11 +70,13 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             </p>
           </div>
           <div style={{ maxWidth: 400, width: "100%" }}>
-            <Image
-              src={logo}
-              alt="Footer logo"
-              style={{ maxWidth: 100, height: "auto" }}
-            />
+            <a href="/">
+              <Image
+                src={logo}
+                alt="Footer logo"
+                style={{ maxWidth: 100, height: "auto" }}
+              />
+            </a>
           </div>
           <div
             className="d-flex gap-3"

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Form from "../../Components/Form/Form";
 import closeIcon from "../../assets/close-button.png";
-import style from "./Pricing.module.scss";
+import style from "./Ceni.module.scss";
 import Image from "next/image";
 interface PriceItem {
   name: string;
@@ -119,7 +119,7 @@ const pricingData: PricingCategory[] = [
   },
 ];
 
-const Pricing: React.FC = () => {
+const Ceni: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("painting");
 
   const currentCategory = pricingData.find((cat) => cat.id === activeCategory);
@@ -204,4 +204,4 @@ const Pricing: React.FC = () => {
   );
 };
 
-export default Pricing;
+export default Ceni;
