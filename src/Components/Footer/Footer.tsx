@@ -62,7 +62,14 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
                   <FacebookIcon widthSize={27} heightSize={27} />
                 </a>
                 &nbsp;
-                <ViberChatIcon widthSize={31} heightSize={31} />
+                <a
+                  href="viber://chat?number=359894376062"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Чат с нас в Messenger"
+                >
+                  <ViberChatIcon widthSize={31} heightSize={31} />
+                </a>
               </li>
               <li className="mb-2">
                 <a href="tel:+359 894 376 062">
