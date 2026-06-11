@@ -3,6 +3,10 @@ import React from "react";
 import style from "./Footer.module.scss";
 import logo from "../../assets/logo.png";
 import Image from "next/image";
+import PhoneIcon from "../../assets/phone";
+import Gmailcon from "../../assets/Gmailcon";
+import FacebookIcon from "../../assets/FacebookIcon";
+import ViberChatIcon from "../../assets/ViberChatIcon";
 interface FooterProps {
   companyName?: string;
 }
@@ -51,11 +55,20 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
               <li className="mb-2">гр. София, Люлин 2</li>
               <li className="mb-2">
                 <a href="mailto:tihomirptodorov984@gmail.com">
-                  tihomirptodorov984@gmail.com
+                  <Gmailcon widthSize={30} heightSize={30} />
                 </a>
+                &nbsp;
+                <a href="https://www.facebook.com/profile.php?id=61590852535733">
+                  <FacebookIcon widthSize={27} heightSize={27} />
+                </a>
+                &nbsp;
+                <ViberChatIcon widthSize={31} heightSize={31} />
               </li>
               <li className="mb-2">
-                <a href="tel:+359 894 376 062">+359 894 376 062</a>
+                <a href="tel:+359 894 376 062">
+                  <PhoneIcon widthSize={30} heightSize={30} />
+                  &nbsp; +359 894 376 062
+                </a>
               </li>
             </ul>
           </div>

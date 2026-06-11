@@ -3,6 +3,7 @@ import Footer from "../Components/Footer/Footer";
 import Menu from "../Components/Menu/Menu";
 import CookieConsent from "../Components/CookieConsent/CookieConsent";
 import Script from "next/script";
+import MessengerChat from "../Components/MessengerChat/MessengerChat";
 export default function RootLayout({
   children,
 }: {
@@ -46,6 +47,7 @@ export default function RootLayout({
           integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
           crossOrigin="anonymous"
         ></script>
+        <MessengerChat pageId="1149109784954230" viberNumber="359894376062" />
       </body>
     </html>
   );
