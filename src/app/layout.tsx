@@ -1,6 +1,7 @@
 import "./App.css";
 import Footer from "../Components/Footer/Footer";
 import Menu from "../Components/Menu/Menu";
+import CookieConsent from "../Components/CookieConsent/CookieConsent";
 
 export default function RootLayout({
   children,
@@ -23,6 +24,7 @@ export default function RootLayout({
             <Menu />
           </header>
           {children}
+          <CookieConsent />
           <Footer />
         </div>
         <script
