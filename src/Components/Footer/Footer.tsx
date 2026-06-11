@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             </p>
           </div>
 
-          <div className="col-6 col-md-4">
+          <div className="col-12 col-md-4">
             <h5 className="text-uppercase mb-3 fw-bold">Връзки</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             </ul>
           </div>
 
-          <div className="col-6 col-md-4">
+          <div className="col-12 col-md-4">
             <h5 className="text-uppercase mb-3 fw-bold">Контакти</h5>
             <ul className="list-unstyled  small">
               <li className="mb-2">гр. София, Люлин 2</li>
@@ -79,13 +79,13 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компан�
             </a>
           </div>
           <div
-            className="d-flex gap-3"
+            className="d-flex justify-content-between"
             style={{ maxWidth: 400, width: "100%" }}
           >
-            <a href="#privacy" className=" text-decoration-none">
+            <a href="privacy-policy" className=" text-decoration-none">
               Поверителност
             </a>
-            <a href="#terms" className=" text-decoration-none">
+            <a href="/terms" className=" text-decoration-none">
               Условия за ползване
             </a>
           </div>
