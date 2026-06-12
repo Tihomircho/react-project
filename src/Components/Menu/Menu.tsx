@@ -1,6 +1,6 @@
 // eslint-disable-next-line jsx-a11y/anchor-is-valid
 "use client";
-import React, { act, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import style from "./Menu.module.scss";
 import Image from "next/image";
@@ -10,6 +10,7 @@ const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScroll] = useState<number>(0);
+  const pathname = usePathname();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -57,14 +58,14 @@ const Menu: React.FC = () => {
           <span></span>
         </div>
         <div
-          className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+          className={`collapse navbar-collapse  ${isOpen ? "show" : ""}`}
           id="navbarNav"
         >
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
-                className="nav-link"
-                aria-current="page"
+                className={`nav-link ${pathname === "/" ? "active" : ""}`}
+                aria-current={pathname === "/" ? "page" : undefined}
                 onClick={closeMenu}
                 href="/"
               >
@@ -72,12 +73,20 @@ const Menu: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" onClick={closeMenu} href="/gallery">
+              <Link
+                className={`nav-link ${pathname === "/gallery" ? "active" : ""}`}
+                onClick={closeMenu}
+                href="/gallery"
+              >
                 Галерия
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" onClick={closeMenu} href="/ceni">
+              <Link
+                className={`nav-link ${pathname === "/ceni" ? "active" : ""}`}
+                onClick={closeMenu}
+                href="/ceni"
+              >
                 Цени
               </Link>
             </li>
