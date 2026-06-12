@@ -23,6 +23,7 @@ import gpkBoq5 from "../../assets/gpk_boq5.jpg";
 import gpkBoq6 from "../../assets/gpk_boq6.jpg";
 import premestvaneNaKontakt from "../../assets/premestvane_na kontakti.jpg";
 import { StaticImageData } from "next/image";
+import Partners from "../../Components/Partners/Partners";
 // Интерфейс за структурата на всяка снимка
 interface GalleryProject {
   id: number;
@@ -113,150 +114,155 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className={`container ${style.featuresWrapper}`}>
-      <div className="text-center mb-5">
-        <h1 className="fw-bold text-uppercase">Нашата Галерия</h1>
-        <p className="text-muted">
-          Разгледайте завършените проекти на Mr. Fixer Service в София
-        </p>
-        <div className="border-warning border-3 border-bottom d-inline-block w-25"></div>
-      </div>
-
-      {/* Бутони за филтриране */}
-      <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`btn rounded-pill px-4 ${filter === cat ? "btn-warning fw-bold" : "btn-outline-secondary"}`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Решетка с проекти */}
-      <div className="row g-4">
-        {filteredItems.map((project) => (
-          <div key={project.id} className="col-12 col-sm-6 col-md-4">
-            <div
-              className="card h-100 border-0 shadow-sm position-relative overflow-hidden"
-              style={{ cursor: "pointer" }}
-              onClick={() => openLightbox(project)}
-            >
-              {/* Корица - показва само първата снимка (images[0]) */}
-              <div
-                className="position-relative overflow-hidden"
-                style={{ height: "250px" }}
-              >
-                {project.images && project.images[0] ? (
-                  <Image
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="w-100 h-100"
-                    style={{
-                      objectFit: "cover",
-                      transition: "transform 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = "scale(1.05)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                  />
-                ) : (
-                  <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
-                    <span className="text-muted small">Няма снимка</span>
-                  </div>
-                )}
-                {/* Индикатор за броя снимки в албума */}
-                <span className="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 small m-2 rounded opacity-75">
-                  📸 {project.images.length} снимки
-                </span>
-              </div>
-
-              <div className="card-body bg-light text-center">
-                <span className="badge bg-secondary mb-2">
-                  {project.category}
-                </span>
-                <h5 className="card-title h6 fw-bold mb-0">{project.title}</h5>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Модален прозорец със Слайдър (Lightbox Album) */}
-      {activeProject && (
-        <div
-          className="modal fade show d-block"
-          style={{ backgroundColor: "rgba(0,0,0,0.9)", zIndex: 1050 }}
-          onClick={() => setActiveProject(null)}
-        >
-          <div className="modal-dialog modal-dialog-centered modal-lg">
-            <div className="modal-content bg-transparent border-0 position-relative text-center">
-              {/* Бутон за затваряне */}
-              <button
-                type="button"
-                className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                style={{ zIndex: 1100 }}
-                onClick={() => setActiveProject(null)}
-              ></button>
-
-              {/* Основна снимка от слайдъра */}
-              <div className="position-relative d-inline-block mx-auto">
-                {activeProject.images &&
-                activeProject.images[currentImageIndex] ? (
-                  <Image
-                    src={activeProject.images[currentImageIndex]}
-                    alt={`Снимка ${currentImageIndex + 1}`}
-                    className="img-fluid rounded shadow"
-                    style={{ maxHeight: "85vh", width: "auto" }}
-                  />
-                ) : (
-                  <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
-                    <span className="text-muted small">Няма снимка</span>
-                  </div>
-                )}
-
-                {/* Показваме стрелки за навигация само ако има повече от 1 снимка */}
-                {activeProject.images.length > 1 && (
-                  <>
-                    {/* Стрелка Назад */}
-                    <button
-                      className="btn btn-dark opacity-75 position-absolute top-50 start-0 translate-middle-y ms-3 rounded-circle"
-                      style={{ width: "45px", height: "45px" }}
-                      onClick={prevImage}
-                    >
-                      ❮
-                    </button>
-
-                    {/* Стрелка Напред */}
-                    <button
-                      className="btn btn-dark opacity-75 position-absolute top-50 end-0 translate-middle-y me-3 rounded-circle"
-                      style={{ width: "45px", height: "45px" }}
-                      onClick={nextImage}
-                    >
-                      ❯
-                    </button>
-                  </>
-                )}
-              </div>
-
-              {/* Текст и брояч под снимката */}
-              <div className="text-white mt-3">
-                <h5 className="fw-bold mb-1">{activeProject.title}</h5>
-                <p className="small text-secondary">
-                  Снимка {currentImageIndex + 1} от{" "}
-                  {activeProject.images.length}
-                </p>
-              </div>
-            </div>
-          </div>
+    <section>
+      <div className={`container ${style.featuresWrapper}`}>
+        <div className="text-center mb-5">
+          <h1 className="fw-bold text-uppercase">Нашата Галерия</h1>
+          <p className="text-muted">
+            Разгледайте завършените проекти на Mr. Fixer Service в София
+          </p>
+          <div className="border-warning border-3 border-bottom d-inline-block w-25"></div>
         </div>
-      )}
-    </div>
+
+        {/* Бутони за филтриране */}
+        <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`btn rounded-pill px-4 ${filter === cat ? "btn-warning fw-bold" : "btn-outline-secondary"}`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Решетка с проекти */}
+        <div className="row g-4">
+          {filteredItems.map((project) => (
+            <div key={project.id} className="col-12 col-sm-6 col-md-4">
+              <div
+                className="card h-100 border-0 shadow-sm position-relative overflow-hidden"
+                style={{ cursor: "pointer" }}
+                onClick={() => openLightbox(project)}
+              >
+                {/* Корица - показва само първата снимка (images[0]) */}
+                <div
+                  className="position-relative overflow-hidden"
+                  style={{ height: "250px" }}
+                >
+                  {project.images && project.images[0] ? (
+                    <Image
+                      src={project.images[0]}
+                      alt={project.title}
+                      className="w-100 h-100"
+                      style={{
+                        objectFit: "cover",
+                        transition: "transform 0.3s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.05)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
+                    />
+                  ) : (
+                    <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
+                      <span className="text-muted small">Няма снимка</span>
+                    </div>
+                  )}
+                  {/* Индикатор за броя снимки в албума */}
+                  <span className="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 small m-2 rounded opacity-75">
+                    📸 {project.images.length} снимки
+                  </span>
+                </div>
+
+                <div className="card-body bg-light text-center">
+                  <span className="badge bg-secondary mb-2">
+                    {project.category}
+                  </span>
+                  <h5 className="card-title h6 fw-bold mb-0">
+                    {project.title}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Модален прозорец със Слайдър (Lightbox Album) */}
+        {activeProject && (
+          <div
+            className="modal fade show d-block"
+            style={{ backgroundColor: "rgba(0,0,0,0.9)", zIndex: 1050 }}
+            onClick={() => setActiveProject(null)}
+          >
+            <div className="modal-dialog modal-dialog-centered modal-lg">
+              <div className="modal-content bg-transparent border-0 position-relative text-center">
+                {/* Бутон за затваряне */}
+                <button
+                  type="button"
+                  className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                  style={{ zIndex: 1100 }}
+                  onClick={() => setActiveProject(null)}
+                ></button>
+
+                {/* Основна снимка от слайдъра */}
+                <div className="position-relative d-inline-block mx-auto">
+                  {activeProject.images &&
+                  activeProject.images[currentImageIndex] ? (
+                    <Image
+                      src={activeProject.images[currentImageIndex]}
+                      alt={`Снимка ${currentImageIndex + 1}`}
+                      className="img-fluid rounded shadow"
+                      style={{ maxHeight: "85vh", width: "auto" }}
+                    />
+                  ) : (
+                    <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
+                      <span className="text-muted small">Няма снимка</span>
+                    </div>
+                  )}
+
+                  {/* Показваме стрелки за навигация само ако има повече от 1 снимка */}
+                  {activeProject.images.length > 1 && (
+                    <>
+                      {/* Стрелка Назад */}
+                      <button
+                        className="btn btn-dark opacity-75 position-absolute top-50 start-0 translate-middle-y ms-3 rounded-circle"
+                        style={{ width: "45px", height: "45px" }}
+                        onClick={prevImage}
+                      >
+                        ❮
+                      </button>
+
+                      {/* Стрелка Напред */}
+                      <button
+                        className="btn btn-dark opacity-75 position-absolute top-50 end-0 translate-middle-y me-3 rounded-circle"
+                        style={{ width: "45px", height: "45px" }}
+                        onClick={nextImage}
+                      >
+                        ❯
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {/* Текст и брояч под снимката */}
+                <div className="text-white mt-3">
+                  <h5 className="fw-bold mb-1">{activeProject.title}</h5>
+                  <p className="small text-secondary">
+                    Снимка {currentImageIndex + 1} от{" "}
+                    {activeProject.images.length}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <Partners logo={""} />
+    </section>
   );
 };
 

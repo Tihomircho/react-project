@@ -1,5 +1,7 @@
 .partnersSection {
-    background-color: #f8f9fa; // Светъл фон, типичен за Bootstrap секции
+    background-color: #f8f9fa;
+    padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 .title {
@@ -28,7 +30,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    height: 100px; // Фиксирана височина за еднаквост на кутиите
+
 }
 
 .logoImg {
@@ -36,6 +38,7 @@
     filter: grayscale(100%); // Прави логата сиви за по-чист вид (изтрийте реда, ако искате цветни)
     opacity: 0.6;
     transition: filter 0.3s ease, opacity 0.3s ease;
+    max-width: 100%;
 }
 
 // Ефекти при посочване (Hover)

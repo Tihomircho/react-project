@@ -4,6 +4,7 @@ import Form from "../../Components/Form/Form";
 import closeIcon from "../../assets/close-button.png";
 import style from "./Ceni.module.scss";
 import Image from "next/image";
+import Partners from "../../Components/Partners/Partners";
 interface PriceItem {
   name: string;
   price: string;
@@ -200,6 +201,7 @@ const Ceni: React.FC = () => {
           <Form />
         </div>
       )}
+      <Partners logo={""} />
     </section>
   );
 };

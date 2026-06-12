@@ -2,41 +2,55 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import style from "./Partners.module.scss";
-
+import dostavkiLogo from "../../assets/DostavkiAvstriavizitka.png";
 // Дефинираме структурата на всеки партньор
 interface Partner {
-  id: number;
-  name: string;
-  logo: string | StaticImageData; // Поддържа локални импорти и URL низове
-  websiteUrl?: string; // Опционален линк към сайта на партньора
+  id?: number;
+  name?: string;
+  logo: string | StaticImageData;
+  websiteUrl?: string;
+  imgwidth?: number;
+  imgheight?: number;
 }
 
 // Примерен масив с данни (заменете с вашите реални лога)
 const PARTNERS_DATA: Partner[] = [
   {
     id: 1,
-    name: "Партньор 1",
-    logo: "/assets/partner1.png",
-    websiteUrl: "https://partner1.com",
+    name: "yourstransports",
+    logo: "https://www.yourstransports.at/themes/yourstransports/assets/img/yourtransports-logo.svg",
+    websiteUrl: "https://www.yourstransports.at/de/",
+    imgwidth: 150,
+    imgheight: 180,
   },
   {
     id: 2,
-    name: "Партньор 2",
-    logo: "/assets/partner2.png",
-    websiteUrl: "https://partner2.com",
+    name: "Доставки от и до Австрия",
+    logo: dostavkiLogo,
+    websiteUrl: "https://www.dostavki-avstria.com/",
+    imgwidth: 250,
+    imgheight: 180,
   },
-  { id: 3, name: "Партньор 3", logo: "/assets/partner3.png" }, // Без линк
-  {
-    id: 4,
-    name: "Партньор 4",
-    logo: "/assets/partner4.png",
-    websiteUrl: "https://partner4.com",
-  },
+  //   {
+  //     id: 3,
+  //     name: "Партньор 3",
+  //     logo: "/assets/partner3.png",
+  //     imgwidth: 150,
+  //     imgheight: 180,
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Партньор 4",
+  //     logo: "/assets/partner4.png",
+  //     websiteUrl: "https://partner4.com",
+  //     imgwidth: 150,
+  //     imgheight: 180,
+  //   },
 ];
 
-const Partners: React.FC = () => {
+const Partners: React.FC<Partner> = ({ imgwidth, imgheight }) => {
   return (
-    <section className={`${style.partnersSection} py-5`}>
+    <section className={`${style.partnersSection}`}>
       <div className="container">
         <h2 className={`${style.title} text-center mb-5`}>Нашите Партньори</h2>
 
@@ -47,8 +61,8 @@ const Partners: React.FC = () => {
                 <Image
                   src={partner.logo}
                   alt={`Лого на ${partner.name}`}
-                  width={150} // Настройте според дизайна
-                  height={60} // Настройте според дизайна
+                  width={partner.imgwidth} // Настройте според дизайна
+                  height={partner.imgheight} // Настройте според дизайна
                   className={style.logoImg}
                 />
               </div>
