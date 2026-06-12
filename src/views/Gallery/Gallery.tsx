@@ -140,7 +140,10 @@ const Gallery: React.FC = () => {
         {/* Решетка с проекти */}
         <div className="row g-4">
           {filteredItems.map((project) => (
-            <div key={project.id} className="col-12 col-sm-6 col-md-4">
+            <div
+              key={project.id}
+              className="col-12 col-sm-6 col-md-4 p-sm-2 p-0"
+            >
               <div
                 className="card h-100 border-0 shadow-sm position-relative overflow-hidden"
                 style={{ cursor: "pointer" }}
