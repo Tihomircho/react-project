@@ -3,7 +3,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://remontisofia.eu/'; 
+  const baseUrl = 'https://remontisofia.eu'; 
 
   return [
     {
