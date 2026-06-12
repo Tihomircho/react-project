@@ -4,6 +4,37 @@ import Menu from "../Components/Menu/Menu";
 import CookieConsent from "../Components/CookieConsent/CookieConsent";
 import Script from "next/script";
 import MessengerChat from "../Components/MessengerChat/MessengerChat";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://remontisofia.eu"),
+  title: {
+    default: "Ремонти София | Професионални Строителни Услуги",
+    template: "%s | Ремонти София", // Позволява динамични заглавия за други страници
+  },
+  description:
+    "Качествени ремонтни дейности в София. Измазване, шпакловка, боядисване, сухо строителство и плочки на достъпни цени.",
+
+  // Ето тук указваме index, follow за търсачките
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  // Основни настройки за споделяне в социалните мрежи
+  openGraph: {
+    title: "Ремонти София | Строителни Услуги",
+    description: "Професионални ремонтни дейности в София на достъпни цени.",
+    url: "https://remontisofia.eu",
+    siteName: "Ремонти София",
+    locale: "bg_BG",
+    type: "website",
+  },
+};
 export default function RootLayout({
   children,
 }: {
