@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 // 2. Това е съдържанието, което ще се появи между менюто и футера
 export default function HomePage() {
   return (
-    <>
+    <main>
       <Home />
-    </>
+    </main>
   );
 }

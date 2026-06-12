@@ -159,16 +159,18 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
             >
               <input type="hidden" name="attached_images" value="" />
 
-              <label>Име</label>
-              <input type="text" name="user_name" required />
+              <label htmlFor="name-name">Име</label>
+              <input id="name-name" type="text" name="user_name" required />
 
-              <label>Имейл</label>
-              <input type="email" name="user_email" required />
+              <label htmlFor="mail">Имейл</label>
+              <input id="mail" type="email" name="user_email" required />
 
-              <label>Описание на ремонта</label>
-              <textarea name="message" required />
+              <label htmlFor="msg">Описание на ремонта</label>
+              <textarea id="msg" name="message" required />
 
-              <label>Снимки на обекта (може няколко, макс 4)</label>
+              <div className="text-white">
+                Снимки на обекта (може няколко, макс 4)
+              </div>
               <label htmlFor="file-upload" className={style.customFileButton}>
                 Избери снимки от устройството
               </label>
