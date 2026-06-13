@@ -3,6 +3,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import style from "./Partners.module.scss";
 import dostavkiLogo from "../../assets/DostavkiAvstriavizitka.png";
+import eMaistor from "../../assets/e-m-logo-2.png";
 // Дефинираме структурата на всеки партньор
 interface Partner {
   id?: number;
@@ -16,12 +17,12 @@ interface Partner {
 // Примерен масив с данни (заменете с вашите реални лога)
 const PARTNERS_DATA: Partner[] = [
   {
-    id: 1,
-    name: "yourstransports",
-    logo: "https://www.yourstransports.at/themes/yourstransports/assets/img/yourtransports-logo.svg",
-    websiteUrl: "https://www.yourstransports.at/de/",
-    imgwidth: 150,
+    name: "E-maistor",
+    logo: eMaistor,
+    websiteUrl: "https://e-maistor.com/",
+    imgwidth: 250,
     imgheight: 180,
+    id: 1,
   },
   {
     id: 2,
@@ -38,17 +39,17 @@ const PARTNERS_DATA: Partner[] = [
   //     imgwidth: 150,
   //     imgheight: 180,
   //   },
-  //   {
-  //     id: 4,
-  //     name: "Партньор 4",
-  //     logo: "/assets/partner4.png",
-  //     websiteUrl: "https://partner4.com",
-  //     imgwidth: 150,
-  //     imgheight: 180,
-  //   },
+  {
+    id: 4,
+    name: "yourstransports",
+    logo: "https://www.yourstransports.at/themes/yourstransports/assets/img/yourtransports-logo.svg",
+    websiteUrl: "https://www.yourstransports.at/de/",
+    imgwidth: 150,
+    imgheight: 180,
+  },
 ];
 
-const Partners: React.FC<Partner> = ({ imgwidth, imgheight }) => {
+const Partners: React.FC = () => {
   return (
     <section className={`${style.partnersSection}`}>
       <div className="container">
