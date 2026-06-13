@@ -201,7 +201,7 @@ const Ceni: React.FC = () => {
           <Form />
         </div>
       )}
-      <Partners logo={""} />
+      <Partners />
     </section>
   );
 };

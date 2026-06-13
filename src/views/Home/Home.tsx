@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       />
       <Services onScrollToForm={handkeClick} />
       <Form formRef={targetRef} />
-      <Partners logo={""} />
+      <Partners />
     </div>
   );
 };

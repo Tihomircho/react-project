@@ -261,7 +261,7 @@ const Gallery: React.FC = () => {
           </div>
         )}
       </div>
-      <Partners logo={""} />
+      <Partners />
     </section>
   );
 };
