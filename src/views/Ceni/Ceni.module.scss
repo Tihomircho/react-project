@@ -10,14 +10,14 @@
 
     .cButtonWRapper {
         position: fixed;
-        top: 50%;
+        top: 53%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 5;
-        width: 90%;
+        width: 95%;
 
         img {
-            width: 200px;
+            width: 150px;
 
             @media all and (min-width: 768px) {
                 width: 100%;
@@ -27,11 +27,11 @@
 
         .cButton {
             position: absolute;
-            right: 0;
+            right: 5px;
+            top: 5px;
             width: 100%;
             max-width: 50px;
             height: auto;
-            margin: 20px;
             cursor: pointer;
 
             transition: transform .25s;

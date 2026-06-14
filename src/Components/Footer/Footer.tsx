@@ -11,7 +11,7 @@ interface FooterProps {
   companyName?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ companyName = "Моята Компания" }) => {
+const Footer: React.FC<FooterProps> = ({ companyName = "Mr. Fixer" }) => {
   const currentYear = new Date().getFullYear();
 
   return (

@@ -146,17 +146,7 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
       <div className={`container py-4 ${style.formWrapper}`} ref={formRef}>
         <div className="row align-items-center">
           <div className="col-12 col-md-6">
-            <form
-              className={style.form}
-              ref={form}
-              onSubmit={sendEmail}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-                maxWidth: "500px",
-              }}
-            >
+            <form className={style.form} ref={form} onSubmit={sendEmail}>
               <input type="hidden" name="attached_images" value="" />
 
               <label htmlFor="name-name">Име</label>
