@@ -22,6 +22,10 @@ import gpkBoq4 from "../../assets/gpk_boq4.jpg";
 import gpkBoq5 from "../../assets/gpk_boq5.jpg";
 import gpkBoq6 from "../../assets/gpk_boq6.jpg";
 import premestvaneNaKontakt from "../../assets/premestvane_na kontakti.jpg";
+import premestvaneNaKontakt2 from "../../assets/Преместване-на-контакти.jpg";
+import premestvaneNaKontakt3 from "../../assets/Преместване-на-контакти2.jpg";
+import puskaneKabelZaBoiler from "../../assets/Пускане-на-кабел-за-бойлер.jpg";
+import puskaneKabelZaBoiler2 from "../../assets/Пускане-на-кабел-за-бойлер2.jpg";
 import { StaticImageData } from "next/image";
 import Partners from "../../Components/Partners/Partners";
 // Интерфейс за структурата на всяка снимка
@@ -45,7 +49,13 @@ const Gallery: React.FC = () => {
       id: 2,
       title: "Ел. Услуги",
       category: "Електро",
-      images: [premestvaneNaKontakt],
+      images: [
+        premestvaneNaKontakt,
+        premestvaneNaKontakt2,
+        premestvaneNaKontakt3,
+        puskaneKabelZaBoiler,
+        puskaneKabelZaBoiler2,
+      ],
     },
     {
       id: 3,
@@ -156,6 +166,7 @@ const Gallery: React.FC = () => {
                       src={project.images[0]}
                       alt={project.title}
                       className="w-100 h-100"
+                      loading="eager"
                       style={{
                         objectFit: "cover",
                         transition: "transform 0.3s ease",
