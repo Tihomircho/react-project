@@ -7,13 +7,15 @@ import PhoneIcon from "../../assets/phone";
 import Gmailcon from "../../assets/Gmailcon";
 import FacebookIcon from "../../assets/FacebookIcon";
 import ViberChatIcon from "../../assets/ViberChatIcon";
+import { useTranslations } from "next-intl";
+import { Link } from "../../i18n/routing";
 interface FooterProps {
   companyName?: string;
 }
 
 const Footer: React.FC<FooterProps> = ({ companyName = "Mr. Fixer" }) => {
   const currentYear = new Date().getFullYear();
-
+  const t = useTranslations("Footer");
   return (
     <footer className={`bg-dark text-light py-5 mt-auto w-100 ${style.footer}`}>
       <hr className="border-secondary my-4 pb-4" />
@@ -21,38 +23,35 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Mr. Fixer" }) => {
       <div className="container-fluid">
         <div className="row g-4">
           <div className="col-12 col-md-4">
-            <h5 className="text-uppercase mb-3 fw-bold">{companyName}</h5>
-            <p className=" small white">
-              Твоят доверен домашен майстор в София. Бързи, чисти и качествени
-              дребни ремонти, монтажи и техническа поддръжка за твоя дом и офис.
-            </p>
+            <h5 className="text-uppercase mb-3 fw-bold">{t("companyName")}</h5>
+            <p className="small white">{t("description")}</p>
           </div>
 
           <div className="col-12 col-md-4">
-            <h5 className="text-uppercase mb-3 fw-bold">Връзки</h5>
+            <h5 className="text-uppercase mb-3 fw-bold">{t("conection")}</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
                 <a href="/" className=" text-decoration-none hover-link">
-                  Начало
+                  {t("home")}
                 </a>
               </li>
               <li className="mb-2">
                 <a href="/gallery" className=" text-decoration-none hover-link">
-                  Услуги
+                  {t("gallery")}
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#about" className=" text-decoration-none hover-link">
-                  За нас
+                  {t("about")}
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="col-12 col-md-4">
-            <h5 className="text-uppercase mb-3 fw-bold">Контакти</h5>
+            <h5 className="text-uppercase mb-3 fw-bold">{t("contacts")}</h5>
             <ul className="list-unstyled  small">
-              <li className="mb-2">гр. София, Люлин 2</li>
+              <li className="mb-2">{t("address")}</li>
               <li className="mb-2">
                 <a href="mailto:tihomirptodorov984@gmail.com">
                   <Gmailcon widthSize={30} heightSize={30} />
@@ -86,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Mr. Fixer" }) => {
         <div className="d-flex flex-column flex-sm-row justify-content-around align-items-center small ">
           <div style={{ maxWidth: 400, width: "100%" }}>
             <p className="mb-2 mb-sm-0">
-              &copy; {currentYear} {companyName}. Всички права запазени.
+              &copy; {currentYear} {companyName}. {t("copyright")}
             </p>
           </div>
           <div style={{ maxWidth: 400, width: "100%" }}>
@@ -102,12 +101,12 @@ const Footer: React.FC<FooterProps> = ({ companyName = "Mr. Fixer" }) => {
             className="d-flex justify-content-between"
             style={{ maxWidth: 400, width: "100%" }}
           >
-            <a href="privacy-policy" className=" text-decoration-none">
-              Поверителност
-            </a>
-            <a href="/terms" className=" text-decoration-none">
-              Условия за ползване
-            </a>
+            <Link href="/privacy-policy" className=" text-decoration-none">
+              {t("privacyPolicy")}
+            </Link>
+            <Link href="/terms" className=" text-decoration-none">
+              {t("termsOfService")}
+            </Link>
           </div>
         </div>
       </div>

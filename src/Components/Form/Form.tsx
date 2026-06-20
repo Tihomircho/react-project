@@ -5,12 +5,13 @@ import style from "./Form.module.scss";
 import imageRight from "../../assets/hand-drawn-flat-design-handyman2.png";
 import { RefObject } from "react";
 import Image from "next/image";
-
+import { useTranslations } from "next-intl";
 // Сменете това с вашия истински API ключ от ://imgbb.com
 const IMGBB_API_KEY = "0f0433653e112a063ee174e40f67b1c0";
 
 interface FormSection {
   formRef?: RefObject<HTMLDivElement | null>;
+  locale: string;
 }
 
 interface ImageItem {
@@ -18,9 +19,10 @@ interface ImageItem {
   previewUrl: string;
 }
 
-const ContactForm: React.FC<FormSection> = ({ formRef }) => {
+const ContactForm: React.FC<FormSection> = ({ formRef, locale }) => {
   const form = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const t = useTranslations("Form");
 
   // Пазим оригиналните файлове и техните локални линкове за превю на екрана
   const [imagesList, setImagesList] = useState<ImageItem[]>([]);
@@ -149,20 +151,18 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
             <form className={style.form} ref={form} onSubmit={sendEmail}>
               <input type="hidden" name="attached_images" value="" />
 
-              <label htmlFor="name-name">Име</label>
+              <label htmlFor="name-name">{t("nameLabel")}</label>
               <input id="name-name" type="text" name="user_name" required />
 
-              <label htmlFor="mail">Имейл</label>
+              <label htmlFor="mail">{t("emailLabel")}</label>
               <input id="mail" type="email" name="user_email" required />
 
-              <label htmlFor="msg">Описание на ремонта</label>
+              <label htmlFor="msg">{t("descriptionLabel")}</label>
               <textarea id="msg" name="message" required />
 
-              <div className="text-white">
-                Снимки на обекта (може няколко, макс 4)
-              </div>
+              <div className="text-white">{t("imagesLabel")}</div>
               <label htmlFor="file-upload" className={style.customFileButton}>
-                Избери снимки от устройството
+                {t("uploadImages")}
               </label>
               <input
                 id="file-upload"
@@ -242,7 +242,7 @@ const ContactForm: React.FC<FormSection> = ({ formRef }) => {
               )}
 
               <button type="submit" disabled={isUploading}>
-                {isUploading ? "Моля изчакайте..." : "Изпрати запитване"}
+                {isUploading ? t("uploading") : t("submitButton")}
               </button>
             </form>
           </div>

@@ -5,21 +5,25 @@ import Partners from "../../Components/Partners/Partners";
 import Services from "../../Components/Services/Services";
 import bgImage from "../../assets/header.jpg";
 import { useRef } from "react";
-const Home: React.FC = () => {
+import { useTranslations } from "next-intl";
+interface HomeProps {
+  locale: string;
+}
+const Home: React.FC<HomeProps> = ({ locale }) => {
   const targetRef = useRef<HTMLDivElement>(null);
-
+  const t = useTranslations("Home");
   const handkeClick = () => {
     targetRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (
     <div>
       <Hero
-        title="Професионални услуги за Вашия дом"
-        subtitle="От кашон до готов монтаж. Поправка на ВиК, смяна на контакти и монтаж на лампи. Без бъркотия и на достъпни цени."
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
         bgImage={bgImage.src}
       />
-      <Services onScrollToForm={handkeClick} />
-      <Form formRef={targetRef} />
+      <Services onScrollToForm={handkeClick} locale={locale} />
+      <Form formRef={targetRef} locale={locale} />
       <Partners />
     </div>
   );

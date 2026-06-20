@@ -28,6 +28,7 @@ import puskaneKabelZaBoiler from "../../assets/Пускане-на-кабел-з
 import puskaneKabelZaBoiler2 from "../../assets/Пускане-на-кабел-за-бойлер2.jpg";
 import { StaticImageData } from "next/image";
 import Partners from "../../Components/Partners/Partners";
+import { useTranslations } from "next-intl";
 // Интерфейс за структурата на всяка снимка
 interface GalleryProject {
   id: number;
@@ -37,18 +38,18 @@ interface GalleryProject {
 }
 
 const Gallery: React.FC = () => {
-  // Примерен масив със снимки (замени ги с твои реални линкове от assets)
+  const t = useTranslations("Gallery");
   const galleryData: GalleryProject[] = [
     {
       id: 1,
-      title: "Монтаж на душ кабина",
-      category: "ВиК",
+      title: t("mountingShowerCabin"),
+      category: t("categoryVik"),
       images: [dushkabina1, dushkabina2, dushkabina3],
     },
     {
       id: 2,
-      title: "Ел. Услуги",
-      category: "Електро",
+      title: t("electricalServices"),
+      category: t("categoryElectrical"),
       images: [
         premestvaneNaKontakt,
         premestvaneNaKontakt2,
@@ -59,43 +60,49 @@ const Gallery: React.FC = () => {
     },
     {
       id: 3,
-      title: "Сглобяване на гардероб",
-      category: "Мебели",
+      title: t("assemblyWardrobe"),
+      category: t("categoryFurniture"),
       images: [garderob, garderob2, garderob3],
     },
     {
       id: 4,
-      title: "Монтаж мебели за баня",
-      category: "ВиК",
+      title: t("bathroomFurnitureInstallation"),
+      category: t("categoryVik"),
       images: [shkafBania, shkafBania2, shkafBania3, shkafBania4],
     },
     {
       id: 5,
-      title: "Монтаж на LED осветление",
-      category: "Електро",
+      title: t("ledLightingInstallation"),
+      category: t("categoryElectrical"),
       images: [osvTelo1, osvTelo2, osvTelo3],
     },
     {
       id: 6,
-      title: "Шпакловка, боя, гипсокартон",
-      category: "Вътрешни ремонти",
+      title: t("interiorRemodeling"),
+      category: t("categoryInterior"),
       images: [gpkBoq1, gpkBoq2, gpkBoq3, gpkBoq4, gpkBoq5, gpkBoq6],
     },
   ];
 
   // Състояние за филтъра по категории
-  const [filter, setFilter] = useState<string>("Всички");
+  const [filter, setFilter] = useState<string>(t("allCategories"));
   const [activeProject, setActiveProject] = useState<GalleryProject | null>(
     null,
   );
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   const filteredItems =
-    filter === "Всички"
+    filter === (t("allCategories") as string)
       ? galleryData
       : galleryData.filter((item) => item.category === filter);
 
-  const categories = ["Всички", "ВиК", "Електро", "Мебели", "Вътрешни ремонти"];
+  const categories = [
+    t("allCategories"),
+    t("categoryVik"),
+    t("categoryElectrical"),
+    t("categoryFurniture"),
+    t("categoryInterior"),
+  ];
 
   // Функция за отваряне на албума
   const openLightbox = (project: GalleryProject) => {
@@ -127,10 +134,8 @@ const Gallery: React.FC = () => {
     <section>
       <div className={`container ${style.featuresWrapper}`}>
         <div className="text-center mb-5">
-          <h1 className="fw-bold text-uppercase">Нашата Галерия</h1>
-          <p className="text-muted">
-            Разгледайте завършените проекти на Mr. Fixer Service в София
-          </p>
+          <h1 className="fw-bold text-uppercase">{t("galleryTitle")}</h1>
+          <p className="text-muted">{t("galleryDescription")}</p>
           <div className="border-warning border-3 border-bottom d-inline-block w-25"></div>
         </div>
 
@@ -180,12 +185,12 @@ const Gallery: React.FC = () => {
                     />
                   ) : (
                     <div className="w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
-                      <span className="text-muted small">Няма снимка</span>
+                      <span className="text-muted small">{t("noImage")}</span>
                     </div>
                   )}
                   {/* Индикатор за броя снимки в албума */}
                   <span className="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 small m-2 rounded opacity-75">
-                    📸 {project.images.length} снимки
+                    📸 {project.images.length} {t("photos")}
                   </span>
                 </div>
 
@@ -263,7 +268,7 @@ const Gallery: React.FC = () => {
                 <div className="text-white mt-3">
                   <h5 className="fw-bold mb-1">{activeProject.title}</h5>
                   <p className="small text-secondary">
-                    Снимка {currentImageIndex + 1} от{" "}
+                    {t("photo")} {currentImageIndex + 1} от{" "}
                     {activeProject.images.length}
                   </p>
                 </div>

@@ -4,13 +4,16 @@ import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import style from "./Menu.module.scss";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import Link from "next/link";
+import { Link, usePathname } from "../../i18n/routing";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScroll] = useState<number>(0);
   const pathname = usePathname();
+  const t = useTranslations("Navbar");
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -49,6 +52,9 @@ const Menu: React.FC = () => {
             style={{ maxWidth: 100, height: "auto" }}
           />
         </Link>
+        <div className=" d-lg-none d-block">
+          <LanguageSwitcher />
+        </div>
         <div
           className={`navbar-toggler ${style.menuBtn} ${isOpen ? style.open : ""}`}
           onClick={toggleMenu}
@@ -57,9 +63,11 @@ const Menu: React.FC = () => {
           <span></span>
           <span></span>
         </div>
+
         <div
           className={`collapse navbar-collapse  ${isOpen ? "show" : ""}`}
           id="navbarNav"
+          style={{ justifyContent: "space-between" }}
         >
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -69,7 +77,7 @@ const Menu: React.FC = () => {
                 onClick={closeMenu}
                 href="/"
               >
-                Начало
+                {t("home")}
               </Link>
             </li>
             <li className="nav-item">
@@ -78,7 +86,7 @@ const Menu: React.FC = () => {
                 onClick={closeMenu}
                 href="/gallery"
               >
-                Галерия
+                {t("gallery")}
               </Link>
             </li>
             <li className="nav-item">
@@ -87,10 +95,13 @@ const Menu: React.FC = () => {
                 onClick={closeMenu}
                 href="/ceni"
               >
-                Цени
+                {t("prices")}
               </Link>
             </li>
           </ul>
+        </div>
+        <div className=" d-lg-block d-none">
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

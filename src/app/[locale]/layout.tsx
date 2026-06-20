@@ -1,11 +1,17 @@
-import "./App.css";
-import Footer from "../Components/Footer/Footer";
-import Menu from "../Components/Menu/Menu";
-import CookieConsent from "../Components/CookieConsent/CookieConsent";
+import "../App.css";
+import Footer from "../../Components/Footer/Footer";
+import Menu from "../../Components/Menu/Menu";
+import CookieConsent from "../../Components/CookieConsent/CookieConsent";
 import Script from "next/script";
-import MessengerChat from "../Components/MessengerChat/MessengerChat";
+import MessengerChat from "../../Components/MessengerChat/MessengerChat";
 import { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { routing } from "../../i18n/routing";
+import { notFound } from "next/navigation";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://remontisofia.eu"),
   title: {
@@ -35,13 +41,21 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+  const messages = await getMessages();
+
   return (
-    <html lang="bg">
+    <html lang={locale}>
       <head>
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
@@ -59,15 +73,20 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <div className="App">
-          <header className="App-header">
-            <Menu />
-          </header>
-          {children}
-          <CookieConsent />
-          <Footer />
-          <MessengerChat pageId="1149109784954230" viberNumber="359894376062" />
-        </div>
+        <NextIntlClientProvider messages={messages}>
+          <div className="App">
+            <header className="App-header">
+              <Menu />
+            </header>
+            {children}
+            <CookieConsent />
+            <Footer />
+            <MessengerChat
+              pageId="1149109784954230"
+              viberNumber="359894376062"
+            />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

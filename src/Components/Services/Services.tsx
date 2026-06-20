@@ -3,42 +3,47 @@ import React from "react";
 import furniture1 from "./../../assets/furniture1.jpg";
 import electricity1 from "./../../assets/electricity1.jpg";
 import plumbing from "./../../assets/plumbing-repair-service.jpg";
+import { useTranslations } from "next-intl";
 
 interface Service {
   id: number;
   title: string;
   image: string;
-  desc: string;
+  desc: string; // Вече ще пази само ключа като стринг, напр. "service1.desc"
   price: string;
 }
 interface ServicesProps {
   onScrollToForm: () => void;
+  locale: string;
 }
-const services: Service[] = [
-  {
-    id: 1,
-    title: "Монтаж и демонтаж на мебели",
-    image: furniture1.src,
-    desc: "Професионално <strong>сглобяване</strong> и <strong>разглобяване</strong> на всякакъв вид <strong>мебели</strong> – <strong>гардероби</strong>, <strong>спални</strong> и <strong>секции</strong>. Бързо, прецизно и с внимание към детайла, като гарантираме пълна здравина и перфектно нивелиране на вашите нови или стари мебели.",
-    price: "от 20 €.",
-  },
-  {
-    id: 2,
-    title: "Електро Услуги",
-    image: electricity1.src,
-    desc: "Професионален <strong>монтаж</strong> и <strong>подмяна</strong> на <strong>осветителни тела</strong>, <strong>ключове</strong> и <strong>контакти</strong> за вашия дом или офис. Осигурявам <strong>безопасно свързване</strong>, <strong>прецизна работа</strong> и <strong>надеждност</strong> на електроинсталацията, за да гарантираме вашия комфорт и спокойствие.",
-    price: "от 20 €.",
-  },
-  {
-    id: 3,
-    title: "ВиК Услуги",
-    image: plumbing.src,
-    desc: "Професионален и чист <strong>монтаж</strong> на <strong>смесители (батерии)</strong> за <strong>мивки</strong>, <strong>спирателни кранчета</strong> и <strong>мебели за баня</strong>. Гарантирам <strong>сигурност срещу течове</strong>, коректност и качествено изпълнение на <strong>всяка сглобка</strong>, за да си <strong>спестите</strong> време и бъдещи ремонти.",
-    price: "от 20 €.",
-  },
-];
 
 const Services: React.FC<ServicesProps> = ({ onScrollToForm }) => {
+  const t = useTranslations("Services");
+
+  const services: Service[] = [
+    {
+      id: 1,
+      title: t("service1.title"),
+      image: furniture1.src,
+      desc: "service1.desc",
+      price: t("service1.price"),
+    },
+    {
+      id: 2,
+      title: t("service2.title"),
+      image: electricity1.src,
+      desc: "service2.desc",
+      price: t("service2.price"),
+    },
+    {
+      id: 3,
+      title: t("service3.title"),
+      image: plumbing.src,
+      desc: "service3.desc",
+      price: t("service3.price"),
+    },
+  ];
+
   return (
     <section style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}>
       <h2
@@ -49,7 +54,7 @@ const Services: React.FC<ServicesProps> = ({ onScrollToForm }) => {
           fontWeight: "900",
         }}
       >
-        Нашите Услуги
+        {t("mainTitle")}
       </h2>
       <div className="services-grid">
         {services.map((service: Service) => (
@@ -67,7 +72,9 @@ const Services: React.FC<ServicesProps> = ({ onScrollToForm }) => {
                   padding: "0px 10px 10px 10px",
                   fontSize: "1rem",
                 }}
-                dangerouslySetInnerHTML={{ __html: service.desc }}
+                dangerouslySetInnerHTML={{
+                  __html: t.raw(service.desc),
+                }}
               ></p>
 
               <div className="service-price">{service.price}</div>
@@ -84,7 +91,7 @@ const Services: React.FC<ServicesProps> = ({ onScrollToForm }) => {
                 }}
                 onClick={onScrollToForm}
               >
-                Заяви ремонт
+                {t("ctaButton")}
               </button>
             </div>
           </div>

@@ -5,6 +5,7 @@ import closeIcon from "../../assets/close-button.png";
 import style from "./Ceni.module.scss";
 import Image from "next/image";
 import Partners from "../../Components/Partners/Partners";
+import { useTranslations } from "next-intl";
 interface PriceItem {
   name: string;
   price: string;
@@ -18,124 +19,142 @@ interface PricingCategory {
   items: PriceItem[];
 }
 
-const pricingData: PricingCategory[] = [
+const getPricingData = (
+  t: ReturnType<typeof useTranslations>,
+): PricingCategory[] => [
   {
     id: "painting",
-    title: "Боядисване & Стени",
+    title: t("pricesCategoryPainting"),
     icon: "🎨",
     items: [
       {
-        name: "Грундиране на стени и тавани",
+        name: t("primesWallsAndCeilings"),
         price: "1.25",
-        unit: "€/кв.м.",
+        unit: "€/" + t("unit"),
       },
       {
-        name: "Боядисване с латекс (два ръце) - бяло",
+        name: t("paintingLatexTwoCoatsWhite"),
         price: "2.50",
-        unit: "€/кв.м.",
+        unit: "€/" + t("unit"),
       },
       {
-        name: "Боядисване с латекс - цветно",
+        name: t("paintingLatexTwoCoatsColor"),
         price: "4.00",
-        unit: "€/кв.м.",
+        unit: "€/" + t("unit"),
       },
       {
-        name: "Шпакловка с шийтрок (финишно, шлайф)",
+        name: t("spacklingWithPutty"),
         price: "7.00",
-        unit: "€/кв.м.",
+        unit: "€/" + t("unit"),
       },
       {
-        name: "Обръщане на прозорци и врати след PVC дограма",
+        name: t("windowAndDoorInstallation"),
+
         price: "13.00",
-        unit: "€/л.м.",
+        unit: "€/" + t("unit2"),
       },
     ],
   },
   {
-    id: "electricity",
-    title: "Електро Услуги",
+    id: "pricesCategoryElectricity",
+    title: t("electricityServices"),
     icon: "⚡",
     items: [
-      { name: "Монтаж на ключ или контакт", price: "4.00", unit: "€/бр." },
       {
-        name: "Монтаж на стандартно осветително тяло / аплик",
+        name: t("electricityInstallation"),
+        price: "4.00",
+        unit: "€/" + t("pcs"),
+      },
+      {
+        name: t("lightingInstallation"),
         price: "8.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
       {
         name: "Монтаж на LED лунички (в готов отвор)",
         price: "5.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
       {
         name: "Подмяна на автоматичен предпазител",
         price: "10.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
-      { name: "Монтаж на вентилатор за баня", price: "15.00", unit: "€/бр." },
+      {
+        name: "Монтаж на вентилатор за баня",
+        price: "15.00",
+        unit: "€/" + t("pcs"),
+      },
     ],
   },
   {
     id: "plumbing",
-    title: "ВиК Услуги",
+    title: t("pricesCategoryPlumbing"),
     icon: "🚰",
     items: [
       {
-        name: "Монтаж на смесител / батерия (мивка/баня)",
+        name: t("plumbingInstallation"),
         price: "20.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
-      { name: "Монтаж на сифон за мивка", price: "15.00", unit: "€/бр." },
       {
-        name: "Монтаж на тоалетна чиния (стандартна)",
-        price: "45.00",
-        unit: "€/бр.",
+        name: t("showerCurtainInstallation"),
+        price: "15.00",
+        unit: "€/" + t("pcs"),
       },
-      { name: "Подмяна на спирателен кран", price: "20.00", unit: "€/бр." },
+      {
+        name: t("toiletInstallation"),
+        price: "45.00",
+        unit: "€/" + t("pcs"),
+      },
+      { name: t("faucetInstallation"), price: "20.00", unit: "€/" + t("pcs") },
     ],
   },
   {
     id: "assembly",
-    title: "Мебели & Монтажи",
+    title: t("furnitureAndInstallation"),
     icon: "🪛",
     items: [
       {
-        name: "Монтаж на стойка за телевизор (на стена)",
+        name: t("tvStandInstallation"),
         price: "45.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
-      { name: "Сглобяване на скрин / комод", price: "60.00", unit: "€/бр." },
+      { name: t("wardrobeAssembly"), price: "60.00", unit: "€/" + t("pcs") },
       {
-        name: "Сглобяване на гардероб с плъзгащи врати",
+        name: t("wardrobeWithSlidingDoorsAssembly"),
         price: "120.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
       {
-        name: "Монтаж на кухненски горен шкаф",
+        name: t("kitchenCabinetInstallation"),
         price: "30.00",
-        unit: "€/бр.",
+        unit: "€/" + t("pcs"),
       },
-      { name: "Монтаж на корнизи за пердета", price: "20.00", unit: "€/бр." },
+      {
+        name: t("windowSillInstallation"),
+        price: "20.00",
+        unit: "€/" + t("pcs"),
+      },
     ],
   },
 ];
 
 const Ceni: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("painting");
-
-  const currentCategory = pricingData.find((cat) => cat.id === activeCategory);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const t = useTranslations("Prices");
+  const pricingData = getPricingData(t);
+  const currentCategory = pricingData.find((cat) => cat.id === activeCategory);
   return (
     <section className={`bg-light ${style.pricingWrapper}`}>
       <div className="container" style={{ maxWidth: "900px" }}>
         {/* ЗАГЛАВИЕ */}
         <div className="text-center mb-5">
           <h1 className="text-primary fw-bolder display-6">
-            Цени за Вътрешни Ремонти
+            {t("pricesTitle")}
           </h1>
-          <p className="text-muted">
-            Ориентировъчни цени за труд. Крайна цена се формира след оглед.
-          </p>
+          <p className="text-muted">{t("pricesDescription")}</p>
         </div>
 
         {/* НАВИГАЦИЯ / БУТОНИ КАТЕГОРИИ */}
@@ -181,13 +200,13 @@ const Ceni: React.FC = () => {
         {/* ДОЛЕН БЛОК С БУТОН ЗА ДЕЙСТВИЕ */}
         <div className="text-center mt-5">
           <p className="small text-muted fst-italic mb-3">
-            * Минимална стойност на поръчка за посещение на адрес: 20.00 €
+            {t("noteDescription")}
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
             className="btn btn-success btn-lg px-5 py-3 fw-bold shadow"
           >
-            Заяви оглед / Ремонт
+            {t("ctaButton")}
           </button>
         </div>
       </div>
@@ -198,7 +217,7 @@ const Ceni: React.FC = () => {
         >
           <Image className={style.cButton} src={closeIcon} alt="Close Icon" />
 
-          <Form />
+          <Form locale={""} />
         </div>
       )}
       <Partners />

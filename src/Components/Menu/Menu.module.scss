@@ -6,6 +6,14 @@
     transition: transform 0.4s ease-in-out, background-color 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
+    [class*="navbar-brand"] {
+        margin-right: 0px;
+
+        @media all and (min-width:992px) {
+            margin-right: 20px;
+        }
+    }
+
     &.visible {
         transform: translateY(0);
     }

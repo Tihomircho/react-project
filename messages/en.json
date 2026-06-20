@@ -1,0 +1,150 @@
+{
+  "Metadata": {
+    "title": "Home Master Sofia | Repairs and Plumbing Services",
+    "description": "Professional repair and plumbing services in Sofia. Contact us for quality solutions."
+  },
+  "MetadataGallery": {
+    "title": "Gallery and Completed Projects | Home Master Sofia",
+    "description": "Browse our gallery of successfully completed projects and repairs. See the quality of our work."
+  },
+  "MetadataPrices": {
+    "title": "Prices for Repairs in Sofia | Home Master Sofia",
+    "description": "See the current prices for plumbing services, electrical work, painting, and furniture installation in Sofia. Transparent prices with no hidden fees. Request a quote now!"
+  },
+  "MetadataPrivacyPolicy": {
+    "title": "Privacy Policy | Remonti Sofia",
+    "description": "Privacy policy for the protection of personal data of the users of the Remonti Sofia website."
+  },
+  "MetadataTerms": {
+    "title": "General Terms and Conditions of Use | Remonti Sofia",
+    "description": "General terms and conditions of use for the interior renovation platform in Sofia."
+  },
+  "Home": {
+    "heroTitle": "Professional Handyman Services for Your Home",
+    "heroSubtitle": "From box to ready assembly. Plumbing repair, outlet replacement, and lamp installation. No mess and at affordable prices."
+  },
+  "Navbar": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "prices": "Prices"
+  },
+  "Services": {
+    "mainTitle": "Our services",
+    "ctaButton": "Request a repair",
+    "service1": {
+      "title": "Furniture assembly and disassembly",
+      "desc": "Professional assembly and disassembly of all types of furniture - wardrobes, bedrooms and sectionals. Fast, precise and with attention to detail, we guarantee complete strength and perfect leveling of your new or old furniture.",
+      "price": "from 20 €."
+    },
+    "service2": {
+      "title": "Electrical Services",
+      "desc": "Professional installation and replacement of <strong>lighting fixtures</strong>, <strong>switches</strong> and <strong>outlets</strong> for your home or office. I ensure <strong>safe connections</strong>, <strong>precise work</strong> and <strong>reliability</strong> of the electrical installation to guarantee your comfort and peace of mind.",
+      "price": "from 20 €."
+    },
+    "service3": {
+      "title": "Plumbing Services",
+      "desc": "Professional and clean <strong>installation</strong> of <strong>faucets (cartridges)</strong> for <strong>sinks</strong>, <strong>shut-off valves</strong> and <strong>bathroom furniture</strong>. I guarantee <strong>leak prevention</strong>, correctness and quality installation of <strong>each assembly</strong>, so you can <strong>save time</strong> and future repairs.",
+      "price": "from 20 €."
+    }
+  },
+  "Gallery": {
+    "mountingShowerCabin": "Shower Cabin Installation",
+    "categoryVik": "Plumbing",
+    "electricalServices": "Electrical Services",
+    "categoryElectrical": "Electrical",
+    "assemblyWardrobe": "Wardrobe Assembly",
+    "categoryFurniture": "Furniture",
+    "bathroomFurnitureInstallation": "Bathroom Furniture Installation",
+    "categoryVik": "Plumbing",
+    "interiorRemodeling": "Putty, paint, drywall",
+    "categoryInterior": "Interior",
+    "allCategories": "All Categories",
+    "galleryTitle": "Our Gallery",
+    "galleryDescription": "Browse our completed projects in Sofia",
+    "filterByCategory": "Filter by Category",
+    "ledLightingInstallation": "LED Lighting Installation",
+    "photo": "Photo",
+    "photos": "Photos",
+    "noImage": "No Image"
+  },
+  "Partners": {
+    "partnersTitle": "Our Partners"
+  },
+  "Prices": {
+    "pricesTitle": "Prices for Interior Repairs",
+    "pricesDescription": "Approximate prices for labor. Final price is formed after inspection.",
+    "noteDescription": "* Minimum order value for site visit: 20.00 €",
+    "ctaButton": "Request Inspection / Repair",
+    "pricesCategoryPainting": "Painting and Walls",
+    "primesWallsAndCeilings": "Priming Walls and Ceilings",
+    "paintingLatexTwoCoatsWhite": "Painting with Latex (Two Coats) - White",
+    "paintingLatexTwoCoatsColor": "Painting with Latex (Two Coats) - Color",
+    "spacklingWithPutty": "Spackling with Putty (Finish, Sanding)",
+    "windowAndDoorInstallation": "Installing Windows and Doors after PVC Frames",
+    "pricesCategoryElectricity": "Electrical Services",
+    "electricityServices": "Electrical Services",
+    "electricityInstallation": "Installation of Switch or Outlet",
+    "lightingInstallation": "Installation of Standard Light Fixture / Applique",
+    "pricesCategoryPlumbing": "Plumbing Services",
+    "plumbingInstallation": "Installation of Faucet / Valve (Sink/Bathroom)",
+    "showerCurtainInstallation": "Installation of Shower Curtain",
+    "toiletInstallation": "Installation of Toilet Bowl (Standard)",
+    "faucetInstallation": "Installation of Faucet for Sink",
+    "furnitureAndInstallation": "Furniture & Installations",
+    "tvStandInstallation": "Installation of TV Stand (on Wall)",
+    "wardrobeAssembly": "Assembly of Wardrobe / Chest of Drawers",
+    "wardrobeWithSlidingDoorsAssembly": "Assembly of Wardrobe with Sliding Doors",
+    "kitchenCabinetInstallation": "Installation of Kitchen Upper Cabinet",
+    "windowSillInstallation": "Installation of Window Sills and Curtain Rods",
+    "unit": "sq.m",
+    "unit2": "l.m",
+    "pcs": "pcs"
+  },
+  "Form": {
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "descriptionLabel": "Description of the repair",
+    "imagesLabel": "Photos of the object (multiple allowed, max 4)",
+    "uploadImages": "Select photos from your device",
+    "uploading": "Please wait...",
+    "submitButton": "Submit Request"
+  },
+  "Footer": {
+    "companyName": "Mr. Fixer",
+    "description": "Your trusted handyman in Sofia. Fast, clean and quality minor repairs, installations and technical support for your home and office.",
+    "conection": "Connections",
+    "home": "Home",
+    "gallery": "Services",
+    "about": "About Us",
+    "contacts": "Contacts",
+    "address": "Sofia, Lyulin 2",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "description1": "Last updated: June 2026",
+    "description2": "1. What Data We Collect",
+    "description3": "Through our contact form, we collect your name, email address, a description of the required repair work, and attached photos of the property.",
+    "description4": "2. Purpose of Processing",
+    "description5": "The data is used solely for the purpose of preparing a price quotation and arranging on-site inspections for construction and renovation activities within the city of Sofia."
+  },
+  "Terms": {
+    "title": "General Terms and Conditions of Use",
+    "description1": "Last updated: June 2026",
+    "description2": "1. Subject of the General Terms and Conditions",
+    "description3": "These General Terms and Conditions govern the relationship between the users of the website <strong>remontisofia.eu</strong> (hereinafter referred to as \"the Website\") and its owner. The Website functions as an information and connection platform for interior finishing works (drywall installation, plastering, painting, etc.) within the city of Sofia.",
+    "description4": "2. Nature of the Service and Subcontractors",
+    "description5": "The Website provides users with the opportunity to send inquiries, descriptions, and photos of properties for the purpose of preparing renovation quotes.",
+    "description6": "<strong>IMPORTANT:</strong> The execution of construction and renovation works may be subcontracted to approved external specialists and independent crews (subcontractors). The Website and its owner organize, manage, and coordinate the process, but the actual physical execution of the work is performed by the respective subcontractors.",
+    "description7": "3. Construction Contracts and Liability",
+    "description8": "Final contracts for renovation work, quality guarantees, and execution deadlines shall be settled in writing prior to the commencement of work on the specific project. Liability for compliance with technological processes and any direct damages caused during the work lies solely with the direct contractor of the project, in accordance with the signed individual contract.",
+    "description9": "4. Submission of Inquiries and Content",
+    "description10": "The user agrees to provide accurate information through the contact form (name, phone number, email). By attaching photos of the property, the user confirms that they have the right to photograph and share the respective space and data for the purpose of the renovation assessment.",
+    "description11": "5. Intellectual Property",
+    "description12": "All texts, logos, graphic elements, and the design of this Website are the property of its owner. Copying or using them without explicit permission is prohibited.",
+    "description13": "6. Amendments to the General Terms and Conditions",
+    "description14": "The Website owner reserves the right to amend these General Terms and Conditions at any time. All changes shall become effective immediately upon their publication on this page."
+  }
+}

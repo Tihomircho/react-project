@@ -4,6 +4,8 @@ import Image, { StaticImageData } from "next/image";
 import style from "./Partners.module.scss";
 import dostavkiLogo from "../../assets/DostavkiAvstriavizitka.png";
 import eMaistor from "../../assets/e-m-logo-2.png";
+import { useTranslations } from "next-intl";
+
 // Дефинираме структурата на всеки партньор
 interface Partner {
   id?: number;
@@ -50,10 +52,14 @@ const PARTNERS_DATA: Partner[] = [
 ];
 
 const Partners: React.FC = () => {
+  const t = useTranslations("Partners");
+
   return (
     <section className={`${style.partnersSection}`}>
       <div className="container">
-        <h2 className={`${style.title} text-center mb-5`}>Нашите Партньори</h2>
+        <h2 className={`${style.title} text-center mb-5`}>
+          {t("partnersTitle")}
+        </h2>
 
         <div className="row justify-content-center align-items-center g-4">
           {PARTNERS_DATA.map((partner) => {
