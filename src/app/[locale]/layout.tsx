@@ -16,12 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://remontisofia.eu"),
   title: {
     default: "Ремонти София | Професионални Строителни Услуги",
-    template: "%s | Ремонти София", // Позволява динамични заглавия за други страници
+    template: "%s | Ремонти София",
   },
   description:
     "Качествени ремонтни дейности в София. Измазване, шпакловка, боядисване, сухо строителство и плочки на достъпни цени.",
 
-  // Ето тук указваме index, follow за търсачките
   robots: {
     index: true,
     follow: true,
@@ -31,7 +30,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // Основни настройки за споделяне в социалните мрежи
   openGraph: {
     title: "Ремонти София | Строителни Услуги",
     description: "Професионални ремонтни дейности в София на достъпни цени.",
@@ -41,14 +39,22 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
+// ПОПРАВКА: Дефинираме интерфейс, където params е изрично Promise
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}
+
 export default async function RootLayout({
   children,
   params,
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+}: RootLayoutProps) {
+  // Използваме новия коригиран тип тук
+
+  // Това изчакване (await) вече съответства перфектно на типа Promise
   const { locale } = await params;
+
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
