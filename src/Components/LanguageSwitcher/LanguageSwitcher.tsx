@@ -3,7 +3,7 @@
 import React, { ChangeEvent } from "react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "../../i18n/routing";
-
+import style from "./LanguageSwitcher.module.scss";
 const LanguageSwitcher: React.FC = () => {
   const locale = useLocale(); // Взема текущия активен език (bg, en и т.н.)
   const pathname = usePathname(); // Взема текущия път без езиковия префикс
@@ -22,19 +22,8 @@ const LanguageSwitcher: React.FC = () => {
         id="language-switcher"
         value={locale}
         onChange={handleLanguageChange}
-        style={{
-          padding: "8px 12px",
-          fontSize: "14px",
-          fontWeight: "600",
-          color: "#272727",
-          backgroundColor: "transparent",
-          border: "2px solid #ccc",
-          borderRadius: "6px",
-          cursor: "pointer",
-          outline: "none",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-          transition: "border-color 0.2s",
-        }}
+        className={style.languageSwitcher}
+
         // onFocus={(e) => (e.target.style.borderColor = "#28a745")}
         // onBlur={(e) => (e.target.style.borderColor = "#ccc")}
       >

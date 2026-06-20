@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const t = useTranslations("CookieConsent");
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
@@ -56,13 +57,12 @@ const CookieConsent = () => {
           flex: "1 1 300px",
         }}
       >
-        Този сайт използва „бисквитки“ за осигуряване на правилното му
-        функциониране. Научете повече в нашата{" "}
+        {t("message")}
         <Link
           href="/privacy-policy"
           style={{ color: "#ffc107", textDecoration: "underline" }}
         >
-          Политика за поверителност
+          {t("linkText")}
         </Link>
         .
       </p>
@@ -90,7 +90,7 @@ const CookieConsent = () => {
             e.currentTarget.style.borderColor = "#495057";
           }}
         >
-          Отказвам
+          {t("declineButton")}
         </button>
 
         {/* Бутон за приемане (основен, жълт) */}
@@ -114,7 +114,7 @@ const CookieConsent = () => {
             (e.currentTarget.style.backgroundColor = "#ffc107")
           }
         >
-          Приемам
+          {t("acceptButton")}
         </button>
       </div>
     </div>

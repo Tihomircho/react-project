@@ -19,6 +19,12 @@
     "title": "General Terms and Conditions of Use | Remonti Sofia",
     "description": "General terms and conditions of use for the interior renovation platform in Sofia."
   },
+  "CookieConsent": {
+    "message": "This website uses cookies to ensure its proper functioning. Learn more in our",
+    "linkText": "Privacy Policy",
+    "acceptButton": "Accept",
+    "declineButton": "Decline"
+  },
   "Home": {
     "heroTitle": "Professional Handyman Services for Your Home",
     "heroSubtitle": "From box to ready assembly. Plumbing repair, outlet replacement, and lamp installation. No mess and at affordable prices."
