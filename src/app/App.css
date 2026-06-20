@@ -15,7 +15,11 @@ code {
 .App {
   text-align: center;
 }
-
+input, select, textarea, button {
+  -webkit-appearance: none; /* Премахва фабричните iOS стилове */
+  appearance: none;
+   color: inherit;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
